@@ -1,0 +1,1130 @@
+@import "./base/utils";
+@import "./base/base";
+@import "./base/normalize";
+@import "./base/typography";
+// @import "./common-styles/header";
+@import "./common-styles/footer";
+
+*,
+::after,
+::before {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+
+}
+
+body {
+    background: $YBlack;
+}
+
+.header {  
+    position: relative;
+    z-index: 2;
+  
+    &__menu-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 42px 0 15px;        
+    }
+
+    &__menu-item-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        width: 120px;
+        height: 20px;
+    }
+
+    &__menu-item {
+        
+        a {
+            display: block;
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: Clamp(12px, 1vw, 28px);
+            line-height: 111%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            transition: all .2s linear;
+            &:hover {
+                color: $YBlack;
+                color: #181818;
+                scale: 1.2;
+            }               
+        }
+    }
+}
+
+
+
+.service-center {
+    padding: 10px 0 88px;
+    margin: -2px 0 0;
+    position: relative;
+
+    &__current-city {
+        background: none;
+        border: none;
+        font-family: 'Porsche';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    @include nlg {
+        font-size: 82px; 
+    }
+
+    &__title {
+        font-family: 'Porsche';
+        font-style: normal;
+        font-weight: 400;
+        font-size: Clamp(26px, 7.3vw, 105px);
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin: 0 0 20px;
+    }
+
+    &__bg {
+        height: 1799px;
+        top: -85px;
+        left: 0;
+        position: absolute;
+        display: block;
+        z-index: -1;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__select {
+        min-width: 222px;
+        width: fit-content;
+        cursor: pointer;
+        font-family: 'Porsche';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        color: $YRealWhite;     
+        padding: 7px 15px 7px 3px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        transition: .2S;
+
+        &:hover {
+            background-color: #000;
+        }
+     
+        &::before {
+            content: url("/assets/images/main-page/location.svg");
+            margin-right: 13px;
+        }
+        &::after {
+            content: url("/assets/images/main-page/arrow-down.svg");
+            margin-left: 13px;
+            transform: rotate(0deg);
+        }  
+    }
+
+    &__current-city {
+        width: fit-content;
+    }
+
+    &__city-list {
+        background-color: $color-black;
+        visibility: hidden;
+        opacity: 0;
+        border-radius: 5px;
+        margin-top: -7px;
+        padding-top: 7px;
+        overflow-y: scroll;
+        height: 272px;
+        position: absolute;
+        width: 100%;
+    }
+
+    ._city-list_active {
+        opacity: 1;
+        animation: wrapper .2s ease;
+        visibility: visible;
+        position: inherit;
+    }
+
+    &__list-item {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $YRealWhite;
+        margin-left: 2px;
+        padding-left: 12px;
+        margin-right: 14px;
+        padding-bottom: 5px;
+        padding-top: 4px;
+        cursor: pointer;
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+    }
+
+    &__choose-city {
+        position: absolute;
+        width: fit-content;
+    }
+
+    &__city-choice {
+        margin-bottom: 103px;
+    }
+
+   
+
+    @keyframes wrapper {
+        0% {
+            opacity: 1;
+            scale: 2;
+        }
+        100% {
+            scale: 1;
+        }
+    }
+
+    &__arrows {
+        position: absolute;
+        top: 130px;
+        right:0;
+        z-index: -1;
+        @include nmd {
+           top: 87px; 
+        }
+        @include nlg {
+           top: 90px; 
+        }
+    }
+
+    ._active {
+        background-color: #000;
+        &::after {
+            transform: rotate(-90deg);
+        }
+    }
+
+   
+
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 160%;
+        display: flex;
+        align-items: center;
+        color: #FFFFFF;
+        margin-bottom: 19px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 31px;
+
+        li {
+            box-sizing: border-box;
+            width: 27%;
+            padding: 9px 33px;
+            background: linear-gradient(92.89deg, rgba(255, 255, 255, 0.3) 5.83%, rgba(255, 255, 255, 0.1) 98.85%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 15px;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: Clamp(13px, 1.3vw,20px);
+            line-height: 130%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            text-shadow: 0px 7px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: .2S;
+            &:hover {
+                scale: 1.03;
+            }
+            @include nmd {
+                padding: 9px;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        div {
+            width: 49.6%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__input {
+        background: #FFFFFF;
+        border: 1px solid #00418C;
+        border-radius: 15px;
+        font-family: 'Gilroy';
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 114%;
+        display: flex;
+        align-items: center;
+        color: #181818;
+        padding: 23px 28px;
+     }
+
+    &__input:not(:last-of-type) {
+        margin-bottom: 16px;
+    }
+
+    &__textarea {
+    padding: 18px 63px 92px 26px;
+    margin-bottom: 16px;
+    resize: none;
+    }
+
+    &__button {
+        cursor: pointer;
+        background: #181818;
+        padding: 24px 42px 17px;
+        border-radius: 15px;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: Clamp(18px, 7.1vw, 26px);
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        transition: .2S linear; 
+        &:hover {
+            background-color: $YRed;
+        }
+    }
+
+    &__city-choice {
+        position: relative;
+    }
+
+    &__cities-wrapper {
+        display: flex;
+        flex-direction: column;
+        // width: 600px;
+        background-color: #000;
+        position: absolute;
+        top: 40px;
+        opacity: 0;
+        z-index: 3;
+       visibility: hidden;
+    }
+    ._wrapper_active {
+        opacity: 1;
+        animation: wrapper .2s ease;
+        visibility: visible;
+    }
+    @keyframes wrapper {
+        0% {
+            opacity: 1;
+            scale: 2;
+        }
+        100% {
+            scale: 1;
+        }
+    }
+
+
+    &__cities-list-wrapper {
+        display: flex;
+    }
+
+    &__column {
+        width: 50%;
+    }
+
+    &__cities-wrapper {
+        padding: 20px 0;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+
+    }
+
+    &__cities-form {
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 30px;
+        &__input-wrapper {
+        position: relative;
+        }   
+    }
+
+    &__cities-input {
+        height: 61px;
+        padding: 13px 19px;
+        font-weight: 400;
+        font-size: 22px;
+        color: #ffffff;
+        border: 2px solid transparent;
+        box-shadow: none;
+        z-index: 2;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+    }
+
+    &__cities-list-wrapper {
+        max-height: 220px;
+        padding: 0 30px;
+        overflow-y: auto;  
+        
+
+    &__city-link {
+        color: $color-white;
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        span {
+            color: $YRed;
+        }
+    }
+
+    &__citi-link-slave {
+        color: $color-white;
+        font-family: "Montserrat";
+        font-size: 18px;
+    }  
+    }
+}
+
+.services {
+    padding: 75px 0 82px;
+    position: relative;
+
+    &__title {
+        font-family: 'Porsche';
+        font-style: normal;
+        font-weight: 400;
+        // font-size:49px;
+        font-size: Clamp(23px, 7.3vw, 49px);
+        line-height: 100%;
+        color: #FFFFFF;
+        margin-bottom: 43px;
+        @include nmd {
+            font-size: 37px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        padding: 12px 23px 23px;
+        
+        & a {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            & p {
+                font-family: 'Gilroy';
+                font-style: normal;
+                font-weight: 800;
+                font-size: Clamp(20px, 2vw, 30px);
+                line-height: 110%;
+                color: #FFFFFF;
+                text-shadow: 0px 0px 63px #000000;
+               
+            }
+        }
+
+        &._armchairs {
+            border-radius: 29px;
+            width: 100%;
+            height: Clamp(224px, 23vw, 380px);
+            background: url("/assets/images/main-page/armchairs.png") no-repeat;
+            background-size: cover;
+            margin-bottom: 19px;
+
+            & p {
+                position: absolute;
+                bottom: 0;
+                
+            }
+
+            @include nmd {
+                background-size: contain;
+            }
+        }
+
+        &._simulators {
+            background:url("/assets/images/main-page/simulators.png") no-repeat;
+            background-size: cover;
+            width: 48.2%;
+            height: Clamp(177px, 18vw, 289px);
+            border-radius: 22.6px;
+
+            & p {
+                padding-left: 0;
+                
+            }
+
+            @include nmd {
+                background-size: contain;
+            }
+        }
+
+        &._treadmills {
+            background:url("/assets/images/main-page/treadmills.png") no-repeat;
+            background-size: cover;
+            width: 50.2%;
+            height: Clamp(177px, 18vw, 289px);
+            border-radius: 22.6px;
+            & p {
+                position: absolute;
+                bottom: 0;
+            }
+
+            @include nmd {
+                background-size: contain;
+            }
+        }
+    }
+    &__item:hover {
+        transform: scale(1.02);
+        transition: .2S linear;
+    }
+}
+
+.advantages  {
+    background: linear-gradient(180deg, #181818 0%, #383838 100%);
+    padding: 54px 0 117px;
+
+    &__title {
+        text-align: center;
+        font-family: 'Porsche';
+        font-weight: 400;
+        // font-size: 43px;
+        font-size: Clamp(17px, 7.3vw, 43px);
+        line-height: 100%;
+        color: #FFFFFF;
+        margin-bottom: 13px;
+        @include nlg {
+            font-size: 37px;
+            
+        }
+    }
+
+    &__subtitle {
+        text-align: center;
+        font-family: 'Montserrat';
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin-bottom: 81px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 60px 40px;
+        
+        
+    }
+
+    &__item {
+        & img {
+            height: 70px;
+            width: 70px;
+            margin-bottom: 26px;
+        }
+        
+        
+    }
+
+    &__item-subtitle {
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: Clamp(18px, 1.7vw, 22px);
+        line-height: 122%;
+        color: #FFFFFF;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: Clamp(13px, 1vw, 18px);
+        line-height: 178%;
+        color: #FFFFFF;
+        
+    }
+}
+
+.order {
+    background: linear-gradient(180deg, #383838 0%, #1E242A 100%);
+    padding: 0 0 83px;
+
+    &__content {
+        position: relative;
+    }
+
+    &__image {
+        max-width: 41%;
+        // height: 100%;
+        position:absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        & img {
+            width: 100%;
+        }
+        @include nmd {
+            max-width: unset;
+            position: static;
+        }
+    }
+
+    &__title {
+        font-family: 'Porsche';
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 120%;
+        color: #FFFFFF;
+        margin-bottom: 78px;
+    }
+
+    &__list {
+        box-sizing: border-box;
+        max-width: 54.2%;
+        position: relative;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 20px;
+        // font-size: Clamp(26px, 7.3vw,20px);
+        line-height: 32px;
+        color: #FFFFFF;
+        margin-bottom: 89px;
+        list-style-type: none;
+        padding-left: 0;
+        @include nmd {
+            // width: 100%;
+            max-width: unset;
+        }
+
+        & li {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 160%;
+            color: #FFFFFF;
+            ul {
+                padding-left: 20px;
+            }
+            @include nlg {
+                font-size: Clamp(15px, 1vw, 19px);
+            }
+            @include nmd {
+                font-size: 18px;
+            }
+            & br {
+                @include nmd {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__item {
+        &__title {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            
+        }
+        &:not(:last-of-type) {
+            margin-bottom: 32px;
+        }
+    }   
+    
+    
+
+    &__item {
+        &__list {
+            & li {
+                list-style-type: disc;
+               
+            }
+        }
+    }
+        
+
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 160%;
+        color: #FFFFFF;
+        text-align: center;
+        @include nmd {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.details {
+    position: relative;
+    padding: 75px 0 45px;
+    background: #FFFFFF;
+    overflow: hidden;
+
+    &__wrapper {
+        display: flex;
+        position: relative;
+        // flex-direction: column;
+        
+       
+        
+    }
+
+    &__img {
+        position: static;
+        // left: 0;
+        // bottom: -4px;
+        // width: 700px;
+        // height: 700px;
+        // display: block;
+        // margin-left: -320px;
+        height: 0;
+        width: 30%;
+        img {
+            float: right;
+        }
+        @include nlg {
+            margin-top: 0px;
+            
+        }
+        @include nlgm {
+            // margin-left: -245px;
+        }
+        img {
+           
+            object-fit: contain; 
+            
+            
+        }
+    }
+
+    &__title {
+        text-align: left;
+        font-family: 'Porsche';
+        font-weight: 400;
+        font-size: 41px;
+        font-size: Clamp(24px, 7.3vw, 41px);
+        line-height: 100%;
+        color: #000000;
+        margin-bottom: 90px;
+        @include nlg {
+            font-size: 37px;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        text-align: left;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 150%;
+        color: #181818;
+        // padding-left: 362px;
+        @include nlg {
+            font-size: 16px;
+        }
+        br {
+            @include nlgm {
+                display: none;
+            }
+        }
+    }
+
+    &__text:last-of-type {
+        margin-bottom: 58px;
+    }
+
+    &__text:not(:last-of-type) {
+        margin-bottom: 50px;
+    } 
+
+    &__detailed {
+        margin-top: 40px;
+        right: 0;
+        bottom: 37px;
+        padding: 0 19px;
+        max-width: 1040px;
+        min-height: 112px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(92.89deg, rgba(255, 255, 255, 0.3) 5.83%, rgba(255, 255, 255, 0.1) 98.85%), url("/assets/images/main-page/detailes__text_img.png") no-repeat;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
+        background-size: cover;
+        border-radius: 15px;
+        margin-left: auto;
+        @include nlg {
+            position: relative;
+            z-index: 1;
+            
+        }
+        &__text {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 37px;
+            color:#181818;
+            margin-right: 128px;
+            @include nlg {
+                margin-right: 0;
+                font-size: 20px;
+                
+            }
+            br {
+                @include nlg {
+                    display: none;
+                }
+            }
+        }
+            
+        &__href {
+            width: 208px;
+            height: 57px;
+            background: #E03638;
+            border-radius: 15px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 22px;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all .2S;;
+            &:hover {
+                scale: 1.03;
+                
+            }
+            @include nlg {
+                font-size: 16px;;
+            }
+        }
+    }
+}
+
+.faq {
+    background: #1E242A;
+    padding: 68px 0 170px;
+
+    &__title {
+        font-family: 'Porsche';
+        font-weight: 400;
+        font-size: Clamp(34px, 7.3vw, 68px);
+        line-height: 110.69%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 58px;
+    }
+
+    &__list {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 110.69%;
+        font-variant: small-caps;
+        color: #FFFFFF;
+    }
+
+    &__question {
+        position: relative;
+        
+    }
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 110.69%;
+        font-variant: small-caps;
+        color: #FFFFFF;
+        transition: all .2s linear;
+
+    }
+
+
+    &__item:not(:last-of-type) {
+        margin-bottom: 35px;
+    }
+
+    &__question::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: url("/assets/images/main-page/arrow-white.svg");
+        transform: rotate(0deg);
+        transition: transform .2s ease-in;
+    }
+
+    ._active::after {       
+        transform: rotate(90deg);
+        transition: transform .2s ease-in;
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: #FFFFFF;
+        margin: 14px 0 22px;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .2s linear;
+        max-height: 0;
+    }
+}
+
+
+.contacts {
+    background: #1E242A;
+    padding: 85px 0 114px;
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        @include nmd {
+            flex-direction: column;
+        }
+        
+    }
+
+    &__wrapper {
+        max-width: 718px;
+        @include nlg {
+            margin-right: 10px;
+            align-self: center;
+        }
+    }
+
+    &__subtitle {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: Clamp(20px, 2.2vw, 30px);
+        line-height: 160%;
+        display: flex;
+        align-items: center;
+        color: #000000;
+        margin: 17px 0 19px;
+
+        &._centers::before {
+            content: url("/assets/images/main-page/location-black.svg");
+            margin-right: 15px;
+        }
+        
+        &._hours::before {
+            content: url("/assets/images/main-page/time.svg");
+            margin-right: 15px;
+        }
+        
+        &._trade-in::before {
+            content: url("/assets/images/main-page/trade-in.svg");
+            margin-right: 15px;
+        }
+
+        @include nlg {
+            font-size: 23px;
+        }
+        
+    }
+
+    &__brands-wrapper {
+        padding: 17px 50px;
+        background: #FFFFFF;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+
+    &__working-hours-wrapper {
+        padding: 4px 29px 34px;
+        background: #FFFFFF;
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+    &__link {
+        text-decoration: underline;
+    }
+
+    &__brands-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        & > li {
+            @include nlg {
+                width: 25%;
+            }
+           
+        }
+    }
+    &__brands-item {
+        img {
+            @include nlg {
+                object-fit: contain;
+                width: 100%;
+            }
+           
+        }
+    }
+
+    &__text {
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 160%;
+        color: #181818;
+
+        &._bold {
+            font-weight: 700;
+        }
+        @include nlg {
+            font-size: 16px;
+        }
+        br {
+            @include nlg {
+                display: none;
+            }
+        }
+            
+        
+    }
+
+    &__trade-in-wrapper {
+        padding: 17px 54px 34px 29px;
+        background: #FFFFFF;
+        border-radius: 15px;
+    }
+
+    &__phone-wrapper {
+        text-align: center;
+        background: #383838;
+        border-radius: 15px;
+        padding: 29px 29px  24px;
+        margin-bottom: 20px;
+        
+        
+        @include nmd {
+            margin: 20px 0;
+        }
+
+        a {
+            display: block;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: Clamp(38px, 3.5vw, 50px);
+            line-height:170%;
+            text-decoration-line: underline;
+            color: #FFFFFF;
+            transition: .2S linear;
+            &:hover {
+                scale: 1.01;
+            }
+            @include nlg {
+                font-size: 30px;
+            }
+        }
+        p {
+            display: flex;
+            justify-content: center;
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            &::before {
+                content: url("/assets/images/main-page/phone.svg");
+                margin-right: 28px;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__input {
+        box-sizing: border-box;
+        background: #FFFFFF;
+        border-radius: 15px;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        color: #939393;
+    }
+
+    &__textarea {
+        resize: none;
+        padding: 17px 20px 176px;
+        @include nlg {
+            padding-bottom: 143px;
+        }
+    }
+
+    &__button {
+        padding: 17px 143px;
+        background: #E03638;
+        border-radius: 15px;
+        font-family: 'Montserrat';
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 22px;
+        line-height:100%;
+        cursor: pointer;
+        transition: .2S linear;
+        &:hover {
+            background-color: $YBlack;
+            color: $YRed;
+           
+        }
+    }
+}
+
+

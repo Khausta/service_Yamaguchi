@@ -1,0 +1,51 @@
+@import "../base/utils";
+@import "../base/base";
+@import "../base/normalize";
+@import "../base/typography";
+
+.header {
+    overflow: hidden;
+
+    &__menu-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+
+    &__menu-item {
+        position: relative;
+        
+        a {
+            font-family: 'Porsche';
+            font-weight: 400;
+            font-size: Clamp(12px, 1vw, 18px);
+            line-height: 111%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            padding-top: 40px;
+            padding-bottom: 40px;
+             
+            &::before {
+                content: '';
+                display: block;
+                width: calc(100% + 65px);
+                height: 100px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(255, 255, 255, .1);
+                opacity: 0;
+                z-index: -1;  
+                transition: all .2S; 
+            }
+        }
+
+        a:hover {  
+                
+            &::before {
+                opacity: 1;
+            }
+        }    
+    }
+}

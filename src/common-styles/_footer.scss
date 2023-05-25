@@ -1,0 +1,95 @@
+@import "../base/utils";
+@import "../base/base";
+@import "../base/normalize";
+@import "../base/typography";
+
+.footer {
+    overflow: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
+    background: url("/assets/images/service/footer-bg.png") no-repeat;
+    background-position: center -2px;
+    padding: 70px 0 46px;
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 0.8fr 1.3fr;
+        grid-template-areas: 
+        "A C D"
+        "B C E";
+        grid-column-gap: 200px;
+        grid-row-gap: 50px;
+        padding-left: 87px;
+        @include nlg {
+            padding-left: 16px;
+        }
+
+        @include nmd {
+            gap: 50px;
+        }
+
+        &_A {
+            grid-area: A;
+        }
+
+        &_B {
+            grid-area: B;
+        }
+
+        &_C {
+            grid-area: C;
+            .footer__menu {
+                   li:not(:last-of-type) {
+                    padding-bottom: 12px;
+                   }
+                   a {
+                    transition: all .2s linear;   
+                    &:hover {
+                        color: $YBlack;
+                        
+                    }
+                }
+            }
+            
+        }
+
+        &_D {
+            grid-area: D;
+        }
+
+        &_E {
+            grid-area: E;
+        }
+        
+    }
+
+    &__text {
+        font-family: 'Murecho';
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 160.86%;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        &._large {
+            font-size: 22px;
+        }
+    }
+    &__phone {
+        transition: all .2s;
+        &:hover {
+            color: $YBlack;
+        }
+    }
+
+    &__payment-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+       
+       
+    }
+
+    ._small {
+        font-size: 20px;
+    }
+}

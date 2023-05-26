@@ -2,8 +2,8 @@
 @import "./base/base";
 @import "./base/normalize";
 @import "./base/typography";
-@import "./common-styles/header";
-@import "./common-styles/footer";
+@import "./common-styles/header-2";
+@import "./common-styles/footer-2";
 
 * {
     -webkit-tap-highlight-color: transparent;
@@ -20,11 +20,10 @@ body {
 }
 
 .main-wrapper {
-   background: linear-gradient(0%, #383838 -1.32%, #181818 100%);
+    background: linear-gradient(180deg, #254264 0%, #1E242A 100%);
 }
 .category-info {
-   
-   
+  
     &__content {
         padding-top: 83px;
         padding-bottom: 91px;
@@ -44,23 +43,19 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-         
-            svg {
-                transform: rotate(90deg);   
-            }
         } 
         
         &:hover {
        
                 h1 {
 
-                    color: #000000;
+                    color: $YSovsemBlack;
                     transition: all .3s;
                 }
             
             svg {
                 path {
-                    fill: black;
+                    fill: $YSovsemBlack;
                     transition: all .3s;
                 } 
             }

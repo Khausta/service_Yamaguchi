@@ -32,12 +32,8 @@ body {
         justify-content: center;
         align-items: center;
         overflow: visible;
-        width: 120px;
+        width: 145px;
         height: 20px;
-    }
-
-    &__menu-item {
-        
         a {
             display: block;
             font-family: 'Montserrat';
@@ -49,14 +45,11 @@ body {
             transition: all .2s linear;
             &:hover {
                 color: $YBlack;
-                color: #181818;
-                scale: 1.2;
+                font-size: calc(100% + 7px);
             }               
         }
     }
 }
-
-
 
 .service-center {
     padding: 10px 0 88px;
@@ -137,10 +130,6 @@ body {
         }  
     }
 
-    &__current-city {
-        width: fit-content;
-    }
-
     &__city-list {
         background-color: $color-black;
         visibility: hidden;
@@ -205,7 +194,7 @@ body {
         position: absolute;
         top: 130px;
         right:0;
-        z-index: -1;
+        z-index: 0;
         @include nmd {
            top: 87px; 
         }
@@ -1060,7 +1049,7 @@ body {
             line-height:170%;
             text-decoration-line: underline;
             color: #FFFFFF;
-            transition: .2S linear;
+            transition: .1S linear;
             &:hover {
                 scale: 1.01;
             }

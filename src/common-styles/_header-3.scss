@@ -1,0 +1,119 @@
+@import "./base/utils";
+@import "./base/base";
+@import "./base/normalize";
+@import "./base/typography";
+
+*,
+::after,
+::before {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+
+}
+
+.header {  
+    position: relative;
+    z-index: 2;
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+     
+    &__menu-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 35px 0 37px;       
+    }
+
+    &__menu-item {
+        position: relative;
+      
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    
+        a {
+            font-family: 'Impact';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 27px;
+            text-transform: uppercase;
+            color: $YRealWhite;
+            transition: all .2s linear;
+            &::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 35px;
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                top: -3px;
+                background-color: $YRed;
+                border-radius: 5px;
+                z-index: -1;  
+            }
+            &:hover {
+           
+                &::before {
+                    width: 120%;
+                    transition: all .2s linear;
+                }
+            }
+        }    
+    }
+    
+    &__menu-list-main {
+        display: flex;
+        justify-content: space-between;
+        padding: 75px 60px 46px 60px;
+    }
+
+    &__menu-item-main {
+        position: relative;
+      
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    
+        a {
+            font-family: 'Gropled-Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: Clamp(10px, 7.1vw, 28px);
+            line-height: 6px;
+            text-transform: uppercase;
+            color: $YGreyBlue;
+            transition: all .2s linear;
+        }
+            &::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 35px;
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                top: -3px;
+                background-color: $YRed;
+                border-radius: 5px;
+                z-index: -1;  
+            }
+            &:hover {
+           
+                &::before {
+                    width: 120%;
+                    transition: all .2s linear;
+                }
+            }
+        }    
+
+    &__menu-item-white {
+        a {
+            color: $YRealWhite;
+        }
+    }
+}

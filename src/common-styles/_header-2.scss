@@ -1,0 +1,73 @@
+@import "./base/utils";
+@import "./base/base";
+@import "./base/normalize";
+@import "./base/typography";
+
+*,
+::after,
+::before {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+
+}
+
+.header {  
+    position: relative;
+    z-index: 2;
+
+    &__menu-black {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+     
+    &__menu-list {
+        display: flex;
+        justify-content: right;
+        padding: 61px 0 55px;
+            
+    }
+    &__menu-item {
+        position: relative;
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    
+        a {
+            font-family: 'Impact';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 27px;
+            text-transform: uppercase;
+            color: #233146;
+            transition: all .2s linear;
+            &::before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                top: 27px;
+                background-color: $YRed;
+                border-radius: 5px;
+                z-index: -1;  
+            }
+            &:hover {
+                color: #181818;
+                &::before {
+                    width: 100%;
+                    transition: all .2s linear;
+                }
+            }
+        }    
+    }
+
+    &__menu-item-white {
+        a {
+            color: $YRealWhite;
+        }
+    }
+}

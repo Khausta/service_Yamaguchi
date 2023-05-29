@@ -1,4 +1,3 @@
-
 let selector = document.querySelector('.service-center__select');
 let currentCity = selector.textContent;
 let cityList = document.querySelector('.service-center__city-list');

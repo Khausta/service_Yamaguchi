@@ -4,27 +4,22 @@
 @import "../base/typography";
 
 .footer {
-    background-color: #181818;
+    background-color: $YBlack;
     padding-top: 67px;
     padding-bottom: 79px;
     max-width: 1920px;
     margin: 0 auto;
- 
-    
-
 
     &__content {
         display: flex;
         justify-content: space-between;
         overflow: hidden;
-    }
-    &__text {
         font-family: 'Impact';
-        font-style: normal;
+         font-style: normal;
         font-weight: 400;
         font-size: 20px;
-        text-transform: uppercase;
-        color: #FFFFFF;   
+         text-transform: uppercase;
+        color: #FFFFFF;  
     }
 
     &__payment-list {
@@ -34,30 +29,29 @@
         margin-bottom: 33px;
     }
     &__menu-list {
+        
         li:nth-child(3) {
             margin-bottom: 35px;
         }
             
         a {
             font-size: 22px;
+
             &:hover {
                 color: $YRed;
                 transition: all .2s;
             }
-        }
-    
-        
+        }   
     }
+
     &__phone {
         padding-bottom: 75px;
 
         a {
-            
             &:hover {
                 color: $YRed;
                 transition: all .2s;
             }
         }
-    }
-    
+    }  
 }

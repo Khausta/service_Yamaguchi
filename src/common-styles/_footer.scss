@@ -11,56 +11,70 @@
     background-position: center -2px;
     padding: 70px 0 46px;
 
+    &__menu {
+        li:not(:last-of-type) {
+            padding-bottom: 12px;
+        }
+        a {
+            transition: all .2s linear;  
+
+            &:hover {
+                color: $YBlack; 
+            }
+        }
+    }
+
     &__content {
         display: grid;
         grid-template-columns: 1fr 0.8fr 1.3fr;
         grid-template-areas: 
-        "A C D"
-        "B C E";
+        "logo menu hours"
+        "phone menu cards";
         grid-column-gap: 200px;
         grid-row-gap: 50px;
         padding-left: 87px;
+        
         @include nlg {
             padding-left: 16px;
         }
 
         @include nmd {
             gap: 50px;
-        }
+        } 
+    }
 
-        &_A {
-            grid-area: A;
-        }
+    &__logo {
+        grid-area: logo;
+    }
 
-        &_B {
-            grid-area: B;
-        }
-
-        &_C {
-            grid-area: C;
-            .footer__menu {
-                   li:not(:last-of-type) {
-                    padding-bottom: 12px;
-                   }
-                   a {
-                    transition: all .2s linear;   
-                    &:hover {
-                        color: $YBlack;
-                        
-                    }
-                }
-            }
-            
-        }
-
-        &_D {
-            grid-area: D;
-        }
-
-        &_E {
-            grid-area: E;
-        }
+    &__phone {
+        grid-area: phone;
+        font-family: 'Murecho';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: $YRealWhite;
         
+        a {
+            transition: all .2s;
+            &:hover {
+                color: $YBlack;
+            }
+        }
+     
+    }
+
+    &__menu {
+        grid-area: menu;
+    }
+
+    &__hours {
+        grid-area: hours;
+    }
+
+    &__cards {
+        grid-area: cards;
     }
 
     &__text {
@@ -69,16 +83,8 @@
         font-size: 22px;
         line-height: 160.86%;
         text-transform: uppercase;
-        color: #FFFFFF;
-        &._large {
-            font-size: 22px;
-        }
-    }
-    &__phone {
-        transition: all .2s;
-        &:hover {
-            color: $YBlack;
-        }
+        color: $YRealWhite;
+        
     }
 
     &__payment-list {
@@ -87,9 +93,5 @@
         justify-content: flex-start;
        
        
-    }
-
-    ._small {
-        font-size: 20px;
-    }
+    }   
 }

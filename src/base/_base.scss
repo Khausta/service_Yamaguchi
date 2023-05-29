@@ -10,12 +10,12 @@
 //главный контейнер
 
 .container-box {
-  width: 1230px;
+  max-width: 1230px;
   margin: 0 auto;
   box-sizing: border-box;
 
   @include nlg {
-    width: 1023px;
+    max-width: 1023px;
     padding-left: 16px;
     padding-right: 16px;
     

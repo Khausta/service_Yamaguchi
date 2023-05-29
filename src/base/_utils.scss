@@ -851,3 +851,31 @@ $YRed: #E03638;
 $YGreen: #5b8930;
 $YGreyBlue: #233146;
 $YBadBlue: #00418C;
+
+
+//buttons
+
+@mixin btns-3 {
+        font-family: $font-arial;
+        font-weight: 400;
+        font-size: Clamp(20px, 3vw, 31px);
+        line-height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $YRealWhite;
+        background: $YRed;
+        border-radius: 15px;
+        
+        cursor: pointer;
+        transition: all .2S;  
+
+        &:hover {
+            background-color: $YGreyBlue;
+        } 
+}
+
+@mixin contacts-wrapper {
+        background: $YRealWhite;
+        border-radius: 15px;
+}

@@ -41,7 +41,7 @@
     &__robot-img {
         position: absolute;
         right: -175px;
-        top: -143px;
+        top: -140px;
         z-index: -1;
 
     }
@@ -78,10 +78,18 @@
         line-height: 114%;
         display: flex;
         align-items: center;
-        color: #181818;
+        color: #939393;
         padding: 23px 28px;
         margin-bottom: 16px;
-        transition: all .2s linear;;
+        transition: all .2s linear;
+
+        &::placeholder {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: Clamp(16px, 7.5vw, 27px);
+            line-height: 114%;
+            color: #939393;
+        }
 
         &:hover {
             border: solid 1px rgba(224,54,56, 1);
@@ -119,7 +127,6 @@
 }
 
 .services {
-    // background: url('../assets/images/page_2/main-page/bg_service.png') no-repeat;
     background: linear-gradient(180deg, #274569 0%, #1E2329 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -581,215 +588,219 @@
         // }
     }
 }
+
 .contacts {
-    background: #1E242A;
-    padding: 85px 0 114px;
-    &__content{
-        display: flex;
-        justify-content: space-between;
-        @include nmd {
-            flex-direction: column;
-        }
-        
-    }
+    color: $YBlack;
+    background-color: #1e242a;
+
+ 
+    padding-top: 86px;
+    padding-bottom: 124px;
 
     &__wrapper {
-        max-width: 718px;
-        @include nlg {
-            margin-right: 10px;
-            align-self: center;
+        display: grid;
+        grid-template-columns: 55.85% 42.3%;
+        grid-template-rows: repeat(3, auto);
+        column-gap: 19px;
+        row-gap: 20px;
+        grid-template-areas: 
+        "A D"
+        "B E"
+        "C E";
+
+        @include nmd {
+            grid-template-columns: 100%;
+            grid-template-areas: 
+            "A"
+            "B"
+            "C"
+            "D"
+            "E";
         }
+    }
+
+    &__brands-wrapper {
+        grid-area: A;
+        padding: 20px 33px;
+        @include contacts-wrapper;
+
+       
+
+    }
+
+    &__working-hours-wrapper {
+        grid-area: B;
+        padding: 17px 73px  34px 29px;
+        @include contacts-wrapper;
+
+        @include nlg {
+            padding-right: 0;
+        }
+       
+    }
+
+    &__trade-in-wrapper {
+        grid-area: C;
+        padding: 17px 25px 33px 29px;
+        @include contacts-wrapper;
+
+        @include nlg {
+            padding-right: 20px;
+        }
+
+    }
+
+    &__link {
+   
+        text-decoration: underline;
+        font-weight: 400;
+        
+    }
+    
+
+    &__phone-wrapper {
+        grid-area: D;
+        background-color: $YSeniorGray;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 16px 0;
+
+        a {
+            text-decoration: underline;
+            margin-bottom: 16px;
+            font-family: $font-arial;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 85px;
+            text-decoration-line: underline;
+            color: $YRealWhite;
+            transition: all .2s;
+
+            &:hover {
+                color: $YRed;
+            }
+        }
+
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $YRealWhite;
+
+            &::before {
+                content: url("/assets/images/page_3/icon_phone.svg");
+                margin-right: 28px;
+            }
+        }
+    }
+
+
+
+    &__form {
+        grid-area: E;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 70px 70px auto 76px;
+        row-gap: 16px;
+
+        @include nlg {
+            grid-template-rows: 55px 55px 55px auto 55px;
+        }
+    }
+
+    &__input {
+        background-color: $YBadWhite;
+        border: 1px solid $YBadBlue;
+        border-radius: 15px;
+        color: #939393;
+        padding-left: 23px;
+        font-family: 'Montserrat';
+        font-weight: 400;
+        font-size: Clamp(18px, 2.3vw, 22px);
+        line-height: 27px;
+
+        &::placeholder {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: Clamp(18px, 2.3vw, 22px);
+            line-height: 27px;
+            color: #939393;;
+        }
+
+        &:hover {
+            border: 1px solid $YRed;
+        }
+    }
+
+    &__textarea {
+        padding-top: 17px;
+        resize: none;
+
+        @include nmd {
+            height: 167px;
+        }
+       
+    }
+
+    &__button {
+
+        @include btns-3;
     }
 
     &__subtitle {
         font-family: 'Montserrat';
         font-weight: 500;
-        font-size: Clamp(20px, 2.2vw, 30px);
-        line-height: 160%;
+        font-size: Clamp(18px, 2.3vw, 30px);
+        line-height: 48px;
         display: flex;
         align-items: center;
-        color: #000000;
-        margin: 17px 0 19px;
-
-        &._centers::before {
-            content: url("/assets/images/main-page/location-black.svg");
-            margin-right: 15px;
-        }
-        &._hours::before {
-            content: url("/assets/images/main-page/time.svg");
-            margin-right: 15px;
-        }
-        &._trade-in::before {
-            content: url("/assets/images/main-page/trade-in.svg");
-            margin-right: 15px;
-        }
-        @include nlg {
-            font-size: 23px;
-        }
+        color: $YSovsemBlack;
+        padding-bottom: 19px;
         
-    }
-
-    &__brands-wrapper {
-        padding: 17px 50px;
-        background: #FFFFFF;
-        border-radius: 15px;
-        margin-bottom: 20px;
-    }
-
-    &__working-hours-wrapper {
-        padding: 4px 29px 34px;
-        background: #FFFFFF;
-        border-radius: 15px;
-        margin-bottom: 20px;
-    }
-    
-    &__link {
-        text-decoration: underline;
-
-        &:hover {
-            color: $YRed;
-            transition: all .2s;
+        &:nth-child(3) {
+            margin-top: 21px;
         }
     }
 
     &__brands-list {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        padding-top: 7px;
 
         li {
-            @include nlg {
-                width: 25%;
+            img {
+                @include nlg {
+                    width: 90%;
+                }
             }
-           
-        }
-    }
-    &__brands-item {
-        img {
-            @include nlg {
-                object-fit: contain;
-                width: 100%;
-            }
-           
         }
     }
 
     &__text {
-        font-family: 'Montserrat';
+        font-family: $font-arial;
         font-weight: 400;
-        font-size: 18px;
-        line-height: 160%;
+        font-size: Clamp(16px, 7vw, 18px);
+        line-height: 29px;
         color: $YBlack;
+
         a {
             color: $YBlack;
+
             &:hover {
                 color: $YRed;
-                transition: all .2s;
             }
         }
 
-        &._bold {
-            font-weight: 700;
-        }
-        @include nlg {
-            font-size: 16px;
-        }
-        br {
-            @include nlg {
-                display: none;
-            }
-        }
-            
-        
-    }
-
-    &__trade-in-wrapper {
-        padding: 17px 54px 34px 29px;
-        background: #FFFFFF;
-        border-radius: 15px;
-    }
-
-    &__phone-wrapper {
-        text-align: center;
-        background: #383838;
-        border-radius: 15px;
-        padding: 29px 29px  24px;
-        margin-bottom: 20px;
-        
-        @include nmd {
-            margin: 20px 0;
-        }
-
-        a {
-            display: block;
-            font-family: 'Montserrat';
-            font-weight: 700;
-            font-size: Clamp(38px, 3.5vw, 50px);
-            line-height:170%;
-            text-decoration-line: underline;
-            color: #FFFFFF;
-
-            &:hover {
-                transition: all .1s;
-                scale: 1.01;
-            }
-
-            @include nlg {
-                font-size: 30px;
-            }
-        }
-
-        p {
-            display: flex;
-            justify-content: center;
-            font-family: 'Montserrat';
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 26px;
-        }
-
-        p::before {
-            content: url("/assets/images/main-page/phone.svg");
-            margin-right: 28px;
+        &:first-child {
+            margin-bottom: 21px;
         }
     }
 
-    &__form {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__input {
-        box-sizing: border-box;
-        background: #FFFFFF;
-        border-radius: 15px;
-        padding: 15px 20px;
-        margin-bottom: 10px;
-        font-family: 'Montserrat';
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 27px;
-        color: #939393;
-    }
-
-    &__textarea {
-        resize: none;
-        padding: 17px 20px 176px;
-        @include nlg {
-            padding-bottom: 143px;
-        }
-    }
-
-    &__button {
-        padding: 17px 143px;
-        background: #E03638;
-        border-radius: 15px;
-        font-family: 'Montserrat';
-        color: #FFFFFF;
-        font-weight: 400;
-        font-size: 22px;
-        line-height:100%;
-        cursor: pointer;
+    &__link-phone {
+        font-weight: 700;
     }
 }
 

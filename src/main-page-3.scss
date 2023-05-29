@@ -33,8 +33,7 @@
         font-family: 'Gropled-Bold';
         font-style: normal;
         font-weight: 700;
-        font-size: Clamp(90px, 7.7vw, 26px);
-        font-size: 115.222px;
+        font-size: clamp(20px,9vw,90px);
         line-height: 100%;
         text-transform: uppercase;
         color: $YGreyBlue;
@@ -468,10 +467,12 @@
     }
 
     &__item {
-
+        margin-left: 25px;
         &__title {
             display: block;
             margin-bottom: 10px;   
+           
+
         }
 
         &__descr {
@@ -504,7 +505,7 @@
         font-size: 20px;
         line-height: 32px;
         color: $YBlack;
-        margin-left: -24px;
+        // margin-left: -24px;
         @include nmd {
             margin-bottom: 20px;
         }
@@ -605,520 +606,210 @@
     }
 }
 
-// .contacts {
-//     background: #DBE6EB;
-//     padding: 85px 0 114px;
-    
-//     // &__inputs {
-//     //     max-width: 100%;
-//     // }
-//     &__content {
-//         display: grid;
-//         grid-template-columns: 1.3fr 1fr;
-//         column-gap: 19px;
-//     }
-//     //     @include nmd {
-//     //         flex-direction: column;
-//     //     }   
-//     // }
-
-//     // &__wrapper {
-
-//     //     @include nlg {
-//     //         margin-right: 10px;
-//     //         align-self: center;
-//     //     }
-//     // }
-   
-//     &__subtitle {
-//         font-family: 'Arial';
-//         font-style: normal;
-//         font-weight: 400;
-//         font-size: Clamp(20px, 2.2vw, 30px);
-//         line-height: 48px;
-//         display: flex;
-//         align-items: center;
-//         color: $YSovsemBlack;
-//         margin-bottom: 13px;
-        
-//         &.centers {
-//             margin-bottom: 19px;
-//         }   
-
-//         &._centers::before {
-//             content: url("/assets/images/main-page/location-black.svg");
-//             margin-right: 15px;
-//         }
-
-//         &._hours::before {
-//             content: url("/assets/images/main-page/time.svg");
-//             margin-right: 15px;
-//         }
-
-//         &._trade-in::before {
-//             content: url("/assets/images/main-page/trade-in.svg");
-//             margin-right: 15px;
-//         }
-//     }
-//     //     &._trade-in {
-//     //         margin-bottom: 19px;
-//     //     }
-
-    
-//     //     @include nlg {
-//     //         font-size: 23px;
-//     //     }
-        
-//     // }
-
-//     &__brands-wrapper {
-//         padding: 20px 33px;
-//         background: $YRealWhite;
-//         border-radius: 15px;
-//         margin-bottom: 31px;
-//     }
-
-//     &__brands-list {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         flex-wrap: wrap;
-
-//         // li {
-//         //     // @include nlg {
-//         //     //     width: 25%;
-//         //     // }
-           
-//         // }
-//     }
-
-//     &__brands-item {
-//         img {
-//             @include nlg {
-//                 object-fit: contain;
-//                 width: 90%;
-//             }
-           
-//         }
-//     }
-
-//     &__working-hours-wrapper {
-//         padding: 17px 29px 34px;
-//         background-color: $YRealWhite;
-//         border-radius: 15px;
-//         margin-bottom: 20px;
-//     }
-
-//     // &__link {
-//     //     text-decoration: underline;
-
-//     //     &:hover {
-//     //         color: $YRed;
-//     //         transition: all .2s;
-//     //     }
-//     // }
-
-    
-  
-
-//     &__text {
-//         font-family: 'Arial';
-//         font-style: normal;
-//         font-weight: 400;
-//         font-size: 18px;
-//         line-height: 29px;
-//         color: $YBlack;
-      
-//         &._centers {
-//             margin-bottom: 20px;
-//         }
-
-//         a {
-//             color: $YBlack;
-            
-//             &:hover {
-//                 color: $YRed;
-//                 transition: all .2s;
-//             }
-//         }
-
-//         // &._bold {
-//         //     font-weight: 700;
-//         // }
-
-//         // @include nlg {
-//         //     font-size: 16px;
-//         // }
-
-//         // br {
-//         //     @include nlg {
-//         //         display: none;
-//         //     }
-//         // }
-            
-        
-//     }
-
-//     &__trade-in-wrapper {
-//         padding: 17px 29px 34px;
-//         background: $YRealWhite;
-//         border-radius: 15px;
-        
-//         a {
-//             color: $YBlack;
-            
-//             &:hover {
-//                 color: $YRed;
-//                 transition: all .2s;
-//             }
-//         }
-//     }
-
-//     &__phone-wrapper {
-//         text-align: center;
-//         background: $YSeniorGray;
-//         border-radius: 15px;
-//         padding: 16px 29px  16px;
-//         margin-bottom: 20px;
-        
-//         // @include nmd {
-//         //     margin: 20px 0;
-//         // }
-
-//         a {
-//             display: block;
-//             font-family: 'Arial';
-//             font-weight: 700;
-//             font-size: Clamp(38px, 3.5vw, 50px);
-//             line-height: 85px;
-//             text-decoration-line: underline;
-//             color: $YRealWhite;
-
-//             &:hover {
-//                 transition: all .1s;
-//                 scale: 1.01;
-//             }
-
-//             // @include nlg {
-//             //     font-size: 30px;
-//             // }
-//         }
-
-//         p {
-//             display: flex;
-//             justify-content: center;
-//             font-family: 'Arial';
-//             font-style: normal;
-//             font-weight: 400;
-//             font-size: 16px;
-//             line-height: 26px;
-//             color: $YRealWhite;
-            
-//             &::before {
-//                 content: url("/assets/images/main-page/phone.svg");
-//                 margin-right: 28px;
-//             }
-//         }
-
-       
-//     }
-
-//     &__form {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//     }
-
-//     &__input {
-//         background: $YRealWhite;
-//         border-radius: 15px;
-//         padding: 15px 20px;
-//         margin-bottom: 16px;
-//         font-family: 'Arial';
-//         font-weight: 400;
-//         font-size: 31px;
-//         line-height: 36px;
-//         color: $YBlack;
-//         border: solid 1px #00418C;
-//         width: 100%;
-
-//         &::placeholder {
-//             color: $YBlack;
-//         }
-
-//         &:hover {
-//             border: solid 1px $YRed;
-//         }
-
-//     }
-
-//     &__textarea {
-//         resize: none;
-//         padding: 17px 20px 76px;
-//         @include nlg {
-//             // padding-bottom: 143px;
-//         }
-//     }
-
-//     &__button {
-//         width: 100%;
-//         height: 76px;
-//         background: $YRed;
-//         border-radius: 15px;
-//         font-family: 'Arial';
-//         font-weight: 400;
-//         font-size: 31px;
-//         line-height: 36px;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         color: $YRealWhite;
-//         cursor: pointer;
-
-//         &:hover {
-//             background-color: $YGreyBlue;
-//         }
-//     }
-// }
-
 .contacts {
-    background: #DBE6EB;
-    padding: 85px 0 114px;
-    &__content{
-        display: flex;
-        justify-content: space-between;
-        @include nmd {
-            flex-direction: column;
-        }
-        
-    }
+    color: $YBlack;
+    background-color: #DBE6EB;
+    padding-top: 86px;
+    padding-bottom: 124px;
 
     &__wrapper {
-        max-width: 718px;
-        @include nlg {
-            margin-right: 10px;
-            align-self: center;
-        }
-    }
+        display: grid;
+        grid-template-columns: 55.85% 42.3%;
+        grid-template-rows: repeat(3, auto);
+        column-gap: 19px;
+        row-gap: 20px;
+        grid-template-areas: 
+        "A D"
+        "B E"
+        "C E";
 
-    &__subtitle {
-        font-size: Clamp(20px, 2.2vw, 30px);
-        line-height: 160%;
-        color: $YBlack;
-        font-family: 'Arial';
-        font-weight: 400;
-        display: flex;
-        align-items: center;
-        margin: 17px 0 19px;
-
-        &._centers::before {
-            content: url("/assets/images/main-page/location-black.svg");
-            margin-right: 15px;
+        @include nmd {
+            grid-template-columns: 100%;
+            grid-template-areas: 
+            "A"
+            "B"
+            "C"
+            "D"
+            "E";
         }
-        
-        &._hours::before {
-            content: url("/assets/images/main-page/time.svg");
-            margin-right: 15px;
-        }
-        
-        &._trade-in::before {
-            content: url("/assets/images/main-page/trade-in.svg");
-            margin-right: 15px;
-        }
-
-        @include nlg {
-            font-size: 23px;
-        }
-        
     }
 
     &__brands-wrapper {
-        padding: 17px 50px;
-        background: #FFFFFF;
-        border-radius: 15px;
-        margin-bottom: 20px;
+        grid-area: A;
+        padding: 20px 33px;
+        @include contacts-wrapper;
+
+       
+
     }
 
     &__working-hours-wrapper {
-        padding: 4px 29px 34px;
-        background: #FFFFFF;
-        border-radius: 15px;
-        margin-bottom: 20px;
+        grid-area: B;
+        padding: 17px 73px  34px 29px;
+        @include contacts-wrapper;
 
-        a {
-            color: $YBlack;
-
-            &:hover {
-                color: $YRed;
-            }
+        @include nlg {
+            padding-right: 0;
         }
-    }
-    &__link {
-        text-decoration: underline;
-    }
-
-    &__brands-list {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        & > li {
-            @include nlg {
-                width: 25%;
-            }
-           
-        }
-    }
-    &__brands-item {
-        img {
-            @include nlg {
-                object-fit: contain;
-                width: 100%;
-            }
-           
-        }
-    }
-
-    &__text {
-        font-family: 'Arial';
-        font-weight: 400;
-        font-size: Clamp(16px, 7.1vw, 18px);
-        line-height: 160%;
-        color: $YBlack;
-
-        &._bold {
-            font-weight: 700;
-        }
-
-        br {
-            @include nlg {
-                display: none;
-            }
-        }
-
-            
-        
+       
     }
 
     &__trade-in-wrapper {
-        padding: 17px 54px 34px 29px;
-        background: #FFFFFF;
+        grid-area: C;
+        padding: 17px 25px 33px 29px;
+        @include contacts-wrapper;
+
+        @include nlg {
+            padding-right: 20px;
+        }
+
+    }
+
+    &__link {
+   
+        text-decoration: underline;
+        
+    }
+    
+
+    &__phone-wrapper {
+        grid-area: D;
+        background-color: $YSeniorGray;
         border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 16px 0;
+
         a {
-            color: $YBlack;
+            text-decoration: underline;
+            margin-bottom: 16px;
+            font-family: $font-arial;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 85px;
+            text-decoration-line: underline;
+            color: $YRealWhite;
+            transition: all .2s;
 
             &:hover {
                 color: $YRed;
             }
         }
-    }
 
-    &__phone-wrapper {
-        text-align: center;
-        background: #383838;
-        border-radius: 15px;
-        padding: 16px 29px 16px;
-        margin-bottom: 20px;
-        
-        
-        @include nmd {
-            margin: 20px 0;
-        }
-
-        a {
-            display: block;
-            font-size: Clamp(38px, 3.5vw, 50px);
-            line-height:170%;
-            text-decoration-line: underline;
-            color: $YRealWhite;
-            font-family: 'Arial';
-            font-weight: 700;
-            color: #FFFFFF;
-            transition: .1S linear;
-
-            &:hover {
-                scale: 1.01;
-            }
-            @include nlg {
-                font-size: 30px;
-            }
-        }
         p {
-            font-family: 'Arial';
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 26px;
             display: flex;
             align-items: center;
-            color: $YRealWhite;
-            display: flex;
             justify-content: center;
+            color: $YRealWhite;
 
             &::before {
-                content: url("/assets/images/main-page/phone.svg");
+                content: url("/assets/images/page_3/icon_phone.svg");
                 margin-right: 28px;
             }
         }
     }
 
+
+
     &__form {
-        display: flex;
-        flex-direction: column;
+        grid-area: E;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 70px 70px auto 76px;
+        row-gap: 16px;
+
+        @include nlg {
+            grid-template-rows: 55px 55px 55px auto 55px;
+        }
     }
 
     &__input {
-        box-sizing: border-box;
-        background: $YRealWhite;
+        background-color: $YRealWhite;
         border: 1px solid $YBadBlue;
         border-radius: 15px;
-        padding: 15px 20px;
-        margin-bottom: 10px;
-        font-family: 'Arial';
+        font-family: $font-arial;
         font-weight: 400;
-        font-size: 31px;
+        font-size: Clamp(20px, 2.3vw, 31px);
         line-height: 36px;
         color: $YBlack;
+        padding-left: 23px;
 
         &::placeholder {
-            font-family: 'Arial';
-            font-style: normal;
+            font-family: $font-arial;
             font-weight: 400;
-            font-size: 31px;
+            font-size: Clamp(20px, 2.3vw, 31px);
             line-height: 36px;
             color: $YBlack;
-
         }
 
         &:hover {
-            border-color: $YRed;
+            border: 1px solid $YRed;
         }
     }
 
     &__textarea {
-        resize: none;
-        padding: 17px 20px 135px;
-        @include nlg {
-            padding-bottom: 143px;
+        padding-top: 17px;
+
+        @include nmd {
+            height: 167px;
         }
+       
     }
 
     &__button {
-        padding: 20px 120px;
-        background: #E03638;
-        border-radius: 15px;
-        font-family: 'Arial';
-        font-style: normal;
+
+        @include btns-3;
+    }
+
+    &__subtitle {
+        font-family: $font-arial;
         font-weight: 400;
-        font-size: 31px;
-        line-height: 36px;        
+        font-size: Clamp(18px, 2.3vw, 30px);
+        line-height: 48px;
         display: flex;
         align-items: center;
-        color: #FFFFFF;
-        cursor: pointer;
-        transition: .2S linear;
-        &:hover {
-            background-color: $YBlack;
-            color: $YRed;
-           
+        color: #000000;
+        padding-bottom: 19px;
+        &:nth-child(3) {
+            margin-top: 21px;
         }
+    }
+
+    &__brands-list {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 7px;
+
+        li {
+            img {
+                @include nlg {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    &__text {
+        font-family: $font-arial;
+        font-weight: 400;
+        font-size: Clamp(16px, 1vw, 18px);
+        line-height: 29px;
+        color: $YBlack;
+
+        a {
+            color: $YBlack;
+            
+            &:hover {
+                color: $YRed;
+            }
+        }
+
+        &:first-child {
+            margin-bottom: 21px;
+        }
+
+       
     }
 }

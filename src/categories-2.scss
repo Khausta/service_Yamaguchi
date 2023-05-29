@@ -6,7 +6,7 @@
 @import "./common-styles/footer-2";
 
 * {
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highligerviht-color: transparent;
   }
 
 *,
@@ -43,6 +43,8 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            
+            
         } 
         
         &:hover {
@@ -50,6 +52,7 @@ body {
                 h1 {
 
                     color: $YSovsemBlack;
+                    
                     transition: all .3s;
                 }
             
@@ -78,25 +81,24 @@ body {
     
 
     &__title {
-        font-family: 'Porsche', sans-serif;
-        font-weight: 400;
-        font-size: Clamp(21px, 1.5vw, 27px);
-        text-align: center;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 48.9874px;
         line-height: 110%;
-        color: #FFFFFF;
-        text-shadow: 0px 0px 56.89px #000000;
+        color: $YRealWhite;
+        text-shadow: 0px 0px 102.874px #000000;
         padding-left: 22px;
     }
 
     &__button {
-        background: #FFFFFF;
+        background-color: $YRed;
         border-radius: 15px;
         padding: 17px 55px;
         font-family: 'Gilroy';
         font-weight: 800;
         font-size: 22px;
         line-height: 100%;
-        color: #E03638;
+        color: $YRealWhite;
         cursor: pointer;
         transition: .2S linear;
         &:hover {

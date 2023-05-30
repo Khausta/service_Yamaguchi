@@ -343,32 +343,55 @@ body {
     &__item {
         width: 100%;  
     }
-    
-   &__img {
-    display: block;
-    width: 100%;
-    
 
-    img {
-        width: 100%;
+    &__item_animate {
+        animation: item 1S 0.3s ease-in;
     }
+
+    @keyframes item {
+        from {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    &__item_js {
+        opacity: 0;
+    }
+        
+    &__img {
+        display: block;
+        width: 100%;
     
-   }
+        img {
+            width: 100%;
+        }
+    
+    }
+
     &__content {
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, auto);
         grid-column-gap: 66px;
-        
-    
+
+        @include nmd {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+
+        }
     }
+
     &__title {
         font-family: 'Montserrat';
         font-weight: 900;
         font-size: 70px;
         line-height: 81px;
         margin-bottom: 100px;
+
         @include nlg {
             font-size: 60px;
             margin-bottom: 40px;
@@ -386,6 +409,7 @@ body {
     
     &__details {
         margin-top: 44px;
+
         &::before {
             content: url('/assets/images/trade-in/icon_be-sure.svg');
             margin-right: Clamp(10px, 1.5vw, 28px);
@@ -393,12 +417,14 @@ body {
             vertical-align: middle;
             line-height: 100%;
         }
+
         @include nlg {
             padding-bottom: 30px;
             font-size: 18px;
         }
 
     }
+
     &__second-title {
         margin-top: 76px;
         margin-bottom: 93px;
@@ -406,29 +432,31 @@ body {
         font-weight: 900;
         font-size: 39px;
         line-height: 45px;
+
         @include nlg {
             margin-top: 0;
             margin-bottom: 20px;
         }
 
     }
+
     &__mt39px {
         margin-top: 39px;
         margin-bottom: 14px;
-        // @include nlg {
-        //     margin-top: 0;
-           
-        // }
     }
+
     &__mb93px {
         margin-bottom: 93px;
         margin-bottom: 0;
     }
 
+    &__item-img {
+        align-self: center;
+        justify-content: center;
+    }
 }
-._img {
-    align-self: center;
-}
+
+
 .question {
     padding: 112px 0 69px;
     &__wrapper {

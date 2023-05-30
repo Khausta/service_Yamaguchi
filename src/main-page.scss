@@ -17,6 +17,19 @@ body {
     background: $YBlack;
 }
 
+::-webkit-scrollbar {
+    width: 7px;
+    height: 61px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $YSovsemBlack;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);;
+}
+
 .header {  
     position: relative;
     z-index: 2;
@@ -34,14 +47,15 @@ body {
         overflow: visible;
         width: 145px;
         height: 20px;
+
         a {
             display: block;
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-weight: 400;
             font-size: Clamp(12px, 1vw, 28px);
             line-height: 111%;
             text-transform: uppercase;
-            color: #FFFFFF;
+            color: $YRealWhite;
             transition: all .2s linear;
             &:hover {
                 color: $YBlack;
@@ -59,7 +73,7 @@ body {
     &__current-city {
         background: none;
         border: none;
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-weight: 400;
         font-size: 14px;
         line-height: 160%;
@@ -74,13 +88,13 @@ body {
     }
 
     &__title {
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-style: normal;
         font-weight: 400;
         font-size: Clamp(26px, 7.3vw, 105px);
         line-height: 100%;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin: 0 0 20px;
     }
 
@@ -91,6 +105,7 @@ body {
         position: absolute;
         display: block;
         z-index: -1;
+
         img {
             object-fit: cover;
             height: 100%;
@@ -102,7 +117,7 @@ body {
         min-width: 222px;
         width: fit-content;
         cursor: pointer;
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
@@ -116,13 +131,14 @@ body {
         transition: .2S;
 
         &:hover {
-            background-color: #000;
+            background-color: $YSovsemBlack;
         }
      
         &::before {
             content: url("/assets/images/main-page/location.svg");
             margin-right: 13px;
         }
+
         &::after {
             content: url("/assets/images/main-page/arrow-down.svg");
             margin-left: 13px;
@@ -151,7 +167,7 @@ body {
     }
 
     &__list-item {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
@@ -163,6 +179,7 @@ body {
         padding-bottom: 5px;
         padding-top: 4px;
         cursor: pointer;
+
         &:hover {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
@@ -204,7 +221,7 @@ body {
     }
 
     ._active {
-        background-color: #000;
+        background-color: $YSovsemBlack;
         &::after {
             transform: rotate(-90deg);
         }
@@ -213,13 +230,13 @@ body {
    
 
     &__text {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 500;
         font-size: 25px;
         line-height: 160%;
         display: flex;
         align-items: center;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 19px;
     }
 
@@ -236,14 +253,14 @@ body {
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
             border-radius: 15px;
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-weight: 700;
             font-size: Clamp(13px, 1.3vw,20px);
             line-height: 130%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FFFFFF;
+            color: $YRealWhite;
             text-shadow: 0px 7px 20px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             transition: .2S;
@@ -268,17 +285,24 @@ body {
     }
 
     &__input {
-        background: #FFFFFF;
+        background: $YRealWhite;
         border: 1px solid #00418C;
         border-radius: 15px;
         font-family: 'Gilroy';
-        font-weight: 300;
-        font-size: 21px;
+        font-weight: 400;
+        font-size: 30px;
         line-height: 114%;
         display: flex;
         align-items: center;
-        color: #181818;
-        padding: 23px 28px;
+        color: $YBlack;
+        padding: 17px 28px;
+        
+        &::placeholder {
+            font-weight: 300;
+            font-size: 21px;
+        }
+
+        
      }
 
     &__input:not(:last-of-type) {
@@ -286,24 +310,24 @@ body {
     }
 
     &__textarea {
-    padding: 18px 63px 92px 26px;
+    padding: 18px 63px 68px 26px;
     margin-bottom: 16px;
     resize: none;
     }
 
     &__button {
         cursor: pointer;
-        background: #181818;
+        background: $YBlack;
         padding: 24px 42px 17px;
         border-radius: 15px;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 600;
         font-size: Clamp(18px, 7.1vw, 26px);
         line-height: 29px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #FFFFFF;
+        color: $YRealWhite;
         transition: .2S linear; 
         &:hover {
             background-color: $YRed;
@@ -317,8 +341,7 @@ body {
     &__cities-wrapper {
         display: flex;
         flex-direction: column;
-        // width: 600px;
-        background-color: #000;
+        background-color: $YSovsemBlack;
         position: absolute;
         top: 40px;
         opacity: 0;
@@ -370,7 +393,7 @@ body {
         padding: 13px 19px;
         font-weight: 400;
         font-size: 22px;
-        color: #ffffff;
+        color: $YRealWhite;
         border: 2px solid transparent;
         box-shadow: none;
         z-index: 2;
@@ -387,7 +410,7 @@ body {
 
     &__city-link {
         color: $color-white;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 500;
         font-size: 16px;
         line-height: 20px;
@@ -409,13 +432,13 @@ body {
     position: relative;
 
     &__title {
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-style: normal;
         font-weight: 400;
         // font-size:49px;
         font-size: Clamp(23px, 7.3vw, 49px);
         line-height: 100%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 43px;
         @include nmd {
             font-size: 37px;
@@ -444,8 +467,8 @@ body {
                 font-weight: 800;
                 font-size: Clamp(20px, 2vw, 30px);
                 line-height: 110%;
-                color: #FFFFFF;
-                text-shadow: 0px 0px 63px #000000;
+                color: $YRealWhite;
+                text-shadow: 0px 0px 63px $YSovsemBlack;
                
             }
         }
@@ -509,17 +532,17 @@ body {
 }
 
 .advantages  {
-    background: linear-gradient(180deg, #181818 0%, #383838 100%);
+    background: linear-gradient(180deg, $YBlack 0%, $YSeniorGray 100%);
     padding: 54px 0 117px;
 
     &__title {
         text-align: center;
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-weight: 400;
         // font-size: 43px;
         font-size: Clamp(17px, 7.3vw, 43px);
         line-height: 100%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 13px;
         @include nlg {
             font-size: 37px;
@@ -529,11 +552,11 @@ body {
 
     &__subtitle {
         text-align: center;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 300;
         font-size: 20px;
         line-height: 150%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 81px;
     }
 
@@ -556,26 +579,25 @@ body {
     }
 
     &__item-subtitle {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 600;
         font-size: Clamp(18px, 1.7vw, 22px);
         line-height: 122%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 10px;
     }
 
     &__text {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 400;
         font-size: Clamp(13px, 1vw, 18px);
         line-height: 178%;
-        color: #FFFFFF;
-        
+        color: $YRealWhite;
     }
 }
 
 .order {
-    background: linear-gradient(180deg, #383838 0%, #1E242A 100%);
+    background: linear-gradient(180deg, $YSeniorGray 0%, #1E242A 100%);
     padding: 0 0 83px;
 
     &__content {
@@ -590,9 +612,11 @@ body {
         top: 0;
         bottom: 0;
         margin: auto;
+
         & img {
             width: 100%;
         }
+
         @include nmd {
             max-width: unset;
             position: static;
@@ -600,11 +624,11 @@ body {
     }
 
     &__title {
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-weight: 400;
         font-size: 32px;
         line-height: 120%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 78px;
     }
 
@@ -612,12 +636,12 @@ body {
         box-sizing: border-box;
         max-width: 54.2%;
         position: relative;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 400;
         font-size: 20px;
         // font-size: Clamp(26px, 7.3vw,20px);
         line-height: 32px;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 89px;
         list-style-type: none;
         padding-left: 0;
@@ -627,11 +651,11 @@ body {
         }
 
         & li {
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-weight: 400;
             font-size: 20px;
             line-height: 160%;
-            color: #FFFFFF;
+            color: $YRealWhite;
             ul {
                 padding-left: 20px;
             }
@@ -674,11 +698,11 @@ body {
         
 
     &__text {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 700;
         font-size: 20px;
         line-height: 160%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         text-align: center;
         @include nmd {
             margin-bottom: 20px;
@@ -689,7 +713,7 @@ body {
 .details {
     position: relative;
     padding: 75px 0 45px;
-    background: #FFFFFF;
+    background: $YRealWhite;
     overflow: hidden;
 
     &__wrapper {
@@ -731,12 +755,12 @@ body {
 
     &__title {
         text-align: left;
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-weight: 400;
         font-size: 41px;
         font-size: Clamp(24px, 7.3vw, 41px);
         line-height: 100%;
-        color: #000000;
+        color: $YSovsemBlack;
         margin-bottom: 90px;
         @include nlg {
             font-size: 37px;
@@ -746,11 +770,11 @@ body {
 
     &__text {
         text-align: left;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 400;
         font-size: 22px;
         line-height: 150%;
-        color: #181818;
+        color: $YBlack;
         // padding-left: 362px;
         @include nlg {
             font-size: 16px;
@@ -792,12 +816,12 @@ body {
             
         }
         &__text {
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-style: normal;
             font-weight: 900;
             font-size: 28px;
             line-height: 37px;
-            color:#181818;
+            color:$YBlack;
             margin-right: 128px;
             @include nlg {
                 margin-right: 0;
@@ -816,12 +840,12 @@ body {
             height: 57px;
             background: #E03638;
             border-radius: 15px;
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-style: normal;
             font-weight: 400;
             font-size: 22px;
             line-height: 22px;
-            color: #FFFFFF;
+            color: $YRealWhite;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -842,22 +866,22 @@ body {
     padding: 68px 0 170px;
 
     &__title {
-        font-family: 'Porsche';
+        font-family: $font-porsche;
         font-weight: 400;
         font-size: Clamp(34px, 7.3vw, 68px);
         line-height: 110.69%;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin-bottom: 58px;
     }
 
     &__list {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 700;
         font-size: 26px;
         line-height: 110.69%;
         font-variant: small-caps;
-        color: #FFFFFF;
+        color: $YRealWhite;
     }
 
     &__question {
@@ -868,12 +892,12 @@ body {
     &__item {
         position: relative;
         cursor: pointer;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 700;
         font-size: 26px;
         line-height: 110.69%;
         font-variant: small-caps;
-        color: #FFFFFF;
+        color: $YRealWhite;
         transition: all .2s linear;
 
     }
@@ -898,11 +922,11 @@ body {
     }
 
     &__text {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 500;
         font-size: 18px;
         line-height: 150%;
-        color: #FFFFFF;
+        color: $YRealWhite;
         margin: 14px 0 22px;
         overflow: hidden;
         opacity: 0;
@@ -933,13 +957,13 @@ body {
     }
 
     &__subtitle {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 500;
         font-size: Clamp(20px, 2.2vw, 30px);
         line-height: 160%;
         display: flex;
         align-items: center;
-        color: #000000;
+        color: $YSovsemBlack;
         margin: 17px 0 19px;
 
         &._centers::before {
@@ -965,14 +989,14 @@ body {
 
     &__brands-wrapper {
         padding: 17px 50px;
-        background: #FFFFFF;
+        background: $YRealWhite;
         border-radius: 15px;
         margin-bottom: 20px;
     }
 
     &__working-hours-wrapper {
         padding: 4px 29px 34px;
-        background: #FFFFFF;
+        background: $YRealWhite;
         border-radius: 15px;
         margin-bottom: 20px;
     }
@@ -991,22 +1015,22 @@ body {
            
         }
     }
+
     &__brands-item {
         img {
             @include nlg {
                 object-fit: contain;
                 width: 100%;
             }
-           
         }
     }
 
     &__text {
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 400;
         font-size: 18px;
         line-height: 160%;
-        color: #181818;
+        color: $YBlack;
 
         &._bold {
             font-weight: 700;
@@ -1025,13 +1049,13 @@ body {
 
     &__trade-in-wrapper {
         padding: 17px 54px 34px 29px;
-        background: #FFFFFF;
+        background: $YRealWhite;
         border-radius: 15px;
     }
 
     &__phone-wrapper {
         text-align: center;
-        background: #383838;
+        background: $YSeniorGray;
         border-radius: 15px;
         padding: 29px 29px  24px;
         margin-bottom: 20px;
@@ -1043,12 +1067,12 @@ body {
 
         a {
             display: block;
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-weight: 700;
             font-size: Clamp(38px, 3.5vw, 50px);
             line-height:170%;
             text-decoration-line: underline;
-            color: #FFFFFF;
+            color: $YRealWhite;
             transition: .1S linear;
             &:hover {
                 scale: 1.01;
@@ -1060,7 +1084,7 @@ body {
         p {
             display: flex;
             justify-content: center;
-            font-family: 'Montserrat';
+            font-family: $font-montserrat;
             font-weight: 400;
             font-size: 16px;
             line-height: 26px;
@@ -1078,11 +1102,11 @@ body {
 
     &__input {
         box-sizing: border-box;
-        background: #FFFFFF;
+        background: $YRealWhite;
         border-radius: 15px;
         padding: 15px 20px;
         margin-bottom: 10px;
-        font-family: 'Montserrat';
+        font-family: $font-montserrat;
         font-weight: 400;
         font-size: 22px;
         line-height: 27px;
@@ -1091,7 +1115,7 @@ body {
 
     &__textarea {
         resize: none;
-        padding: 17px 20px 176px;
+        padding: 19px 20px 176px;
         @include nlg {
             padding-bottom: 143px;
         }
@@ -1099,19 +1123,18 @@ body {
 
     &__button {
         padding: 17px 143px;
-        background: #E03638;
+        background: $YRed;
         border-radius: 15px;
-        font-family: 'Montserrat';
-        color: #FFFFFF;
+        font-family: $font-montserrat;
+        color: $YRealWhite;
         font-weight: 400;
         font-size: 22px;
         line-height:100%;
         cursor: pointer;
         transition: .2S linear;
+
         &:hover {
             background-color: $YBlack;
-            color: $YRed;
-           
         }
     }
 }

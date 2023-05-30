@@ -247,6 +247,7 @@ body {
     }
 
     &__text {
+        
         &_traid-in {
             font-size: 22px;
             line-height: 170%;
@@ -257,6 +258,7 @@ body {
                 padding-right: 10px;
             }
         }
+
         font-family: 'Montserrat';
         font-weight: 400;
         font-size:  20px;
@@ -269,6 +271,7 @@ body {
         }
         
     }
+
     &__phone-block {
         text-align: center;
         background: #181818;
@@ -292,6 +295,7 @@ body {
                 scale: 1.01;
             }
         }
+
         p {
             display: flex;
             justify-content: center;
@@ -306,6 +310,7 @@ body {
             margin-right: Clamp(10px, 1.5vw, 28px);
         }
     }
+
     &__wrapper {
         display: flex;
         align-items: center;
@@ -320,14 +325,16 @@ body {
         }
     }
     &__block {
+
         &__pic {
             display: block;
+
             @include nlg {
                 width: 100%; 
                 align-self: flex-end;
             }
-            
         }
+
         &__img {
             object-fit: contain;
           
@@ -335,9 +342,7 @@ body {
                 width: 100%; 
             }
         }
-
     }
-    
 }
 
 
@@ -356,14 +361,63 @@ body {
             width: 100%;
         }
     }
+    &__item_js {
+        opacity: 0;
+        padding-top: 50px;
+        transition: all .5S;
+    }
 
     &__content {
+        overflow: hidden;
         position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, auto);
         grid-column-gap: 66px;
+        grid-template-areas: 
+        "benefit girl"
+        "armchair old"
+        "value armchairs";
+
+        @include nmd {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+            grid-template-areas: 
+            "benefit"
+            "girl"
+            "old"
+            "armchair"
+            "value"
+            "armchairs";
+            row-gap: 66px;
+
+        }
     }
+
+    &__benefit {
+        grid-area: benefit;
+    }
+
+    &__img-girl {
+        grid-area: girl;
+    }
+
+    &__img-armchair {
+        grid-area: armchair;
+    }
+
+    &__old {
+        grid-area: old;
+    }
+
+    &__evaluation {
+        grid-area: value;
+    }
+
+    &__img-armchairs {
+        grid-area: armchairs;
+    }
+
 
     &__title {
         font-family: $font-arial;
@@ -432,9 +486,7 @@ body {
     }
 }
 
-._img {
-    align-self: center;
-}
+
 
 .question {
     padding: 112px 0 69px;

@@ -9,10 +9,11 @@
     padding-bottom: 79px;
     max-width: 1920px;
     margin: 0 auto;
-
+    
     &__content {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 237px;
         overflow: hidden;
         font-family: 'Impact';
         font-style: normal;
@@ -20,6 +21,44 @@
         font-size: 20px;
         text-transform: uppercase;
         color: #FFFFFF; 
+        grid-template-areas: 
+        "phone menu cards"
+        "hours menu logo";
+
+        @include nmd {
+            grid-template-columns: 1fr;
+            row-gap: 20px;
+            grid-template-areas: 
+        "menu"
+        "hours"
+        "cards"
+        "phone"
+        "logo";
+
+    }
+    }
+
+    &__phone {
+        grid-area: phone;
+    }
+
+    &__hours {
+        grid-area: hours;
+    }
+
+    &__menu {
+        grid-area: menu;
+    }
+
+    &__cards {
+        grid-area: cards;
+        @include nmd {
+            width: 50%;
+        }
+    }
+
+    &__logo {
+        grid-area: logo;
     }
 
     &__payment-list {
@@ -44,7 +83,6 @@
     }
 
     &__phone {
-        padding-bottom: 75px;
 
         a {
             
@@ -55,3 +93,55 @@
         }
     }
 }
+// .footer {
+//     background-color: #181818;
+//     padding-top: 67px;
+//     padding-bottom: 79px;
+//     max-width: 1920px;
+//     margin: 0 auto;
+
+//     &__content {
+//         display: flex;
+//         justify-content: space-between;
+//         overflow: hidden;
+//         font-family: 'Impact';
+//         font-style: normal;
+//         font-weight: 400;
+//         font-size: 20px;
+//         text-transform: uppercase;
+//         color: #FFFFFF; 
+//     }
+
+//     &__payment-list {
+//         display: flex;
+//         justify-content: space-between;
+//         margin-top: 25px;
+//         margin-bottom: 33px;
+//     }
+
+//     &__menu-list {
+//         li:nth-child(3) {
+//             margin-bottom: 35px;
+//         }
+            
+//         a {
+//             font-size: 22px;
+//             &:hover {
+//                 color: $YRed;
+//                 transition: all .2s;
+//             }
+//         } 
+//     }
+
+//     &__phone {
+//         padding-bottom: 75px;
+
+//         a {
+            
+//             &:hover {
+//                 color: $YRed;
+//                 transition: all .2s;
+//             }
+//         }
+//     }
+// }

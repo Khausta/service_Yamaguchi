@@ -19,36 +19,39 @@
 </head>
 <body>
     <header class="header">
-        <nav class="header__menu container-box">
-            <ul class="header__menu-list">
+        <div class="header__wrapper">
+            <img class="header__img" src="../assets/images/main-page/header_menu-mobile.png" alt="ball">
+            <div class="header__mobile-menu">
+                <h2 class="header__title">
+                    Сервисный <br>
+                    центр
+                </h2>
+                <div class="header__menu-burger">
+                    <span class="header__line-1"></span>
+                    <span class="header__line-2"></span>
+                    <span class="header__line-3"></span>
+                </div>
+            </div>
+            <nav class="header__menu container-box">
+                <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <div class="header__menu-item-block">
-                            <a href="#">Контакты</a>
-                        </div>
-                    
+                            <a class="header__a-js" href="#">Контакты</a>
                     </li>
-                <li class="header__menu-item">
-                    <div class="header__menu-item-block">
-                        <a href="#">Гарантии</a>
-                    </div>
-                </li>
-                <li class="header__menu-item">
-                    <div class="header__menu-item-block">
-                        <a href="./traid-in.html">Trade-in</a>
-                    </div>
-                </li>
-                <li class="header__menu-item">
-                    <div class="header__menu-item-block">
-                        <a href="#">Доставка</a>
-                    </div>
-                </li>
-                <li class="header__menu-item">
-                    <div class="header__menu-item-block">
-                        <a href="#">О нас</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+                    <li class="header__menu-item">
+                        <a class="header__a-js" href="#">Гарантии</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__a-js"  href="./traid-in.html">Trade-in</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__a-js" href="#">Доставка</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a  class="header__a-js" href="#">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main class="main-wrapper"> 
         <section class="service-center">
@@ -56,10 +59,15 @@
                 <img src="/assets/images/main-page/main_bg.png" alt="фоновое изображение">
             </picture>
             <div class="service-center__content container-box">
-                <h1 class="service-center__title">
-                    Сервисный <br>
-                    центр
-                </h1>
+                <div class="service-center__title-wrapper">
+
+                    <h1 class="service-center__title">
+                        Сервисный <br>
+                        центр
+                    </h1>
+                    <a href="tel:8-800-550-59-34">8 800 550 59 34</a>
+                </div>
+                
                 <div class="service-center__city-choice">
                     <form class="service-center__choose-city">
                         <div class="service-center__select">
@@ -92,10 +100,19 @@
                         </div>
                     </form>  
                 </div>
-                <picture  class="service-center__arrows">
-                    <img src="/assets/images/main-page/arrow.png" alt="стрелки">
-                </picture>
-                <p class="service-center__text">Мы ремонтируем:</p>
+
+               
+                <div class="service-center__subtitle">
+                    <div class="service-center__subtitle__img">
+                        <img src="/assets/images/main-page/arrow.png" alt="стрелки">
+                    </div>
+                   
+                    <a href="tel:8-800-550-59-34">8 800 550 59 34</a>
+                
+                    <p class="service-center__text">Мы ремонтируем</p>
+                </div>
+                    
+                
                 <ul class="service-center__list">
                     <li>
                         <a href="./armchairs.html">Массажные кресла</a>
@@ -108,7 +125,15 @@
                         <a href="./fitness-equipment.html">Фитнес-тренажеры</a>
                     </li>
                 </ul>
-                <form class="service-center__form request-form">
+                <form class="service-center__form">
+                    <input class="service-center__input service-center__name" type="text" placeholder="Имя">
+                    <input class="service-center__input service-center__phone" type="tel" name="" id="" placeholder="Телефон для связи">
+                    <input class="service-center__input service-center__mail" type="email" name="" id="" placeholder="Ваш e-mail">
+                    <textarea class="service-center__input service-center__textarea" name="" id=""
+                    placeholder="Модель оборудования, &#10симптомы поломки"></textarea>
+                    <button class="service-center__button" type="submit">Отправить заявку</button>
+                </form>
+                <!-- <form class="service-center__form request-form">
                     <div>
                         <input class="service-center__input request-form__input" type="text" placeholder="Имя">
                         <input  class="service-center__input request-form__input" type="tel" placeholder="Телефон для связи" name="" id="">
@@ -118,28 +143,28 @@
                         <textarea class="service-center__textarea service-center__input request-form__textarea" name="" id="" placeholder="Модель оборудования и симптомы поломки"></textarea>
                         <button  class="service-center__button request-form__button" type="submit">Отправить заявку</button>
                     </div>
-                </form>
+                </form> -->
             </div>
         </section>
         <section class="services">
             <div class="services__content container-box">
                 <h2 class="services__title">Мы обслуживаем</h2>
                 <ul class="services__list">
-                    <li class="services__item _armchairs">
+                    <li class="services__item services__item_armchairs">
                         <a href="/pages/armchairs.html">
                             <p>
                                 Массажное оборудование
                             </p>
                         </a>
                     </li>
-                    <li class="services__item _simulators">
+                    <li class="services__item services__item_simulators">
                         <a href="/pages/fitness-equipment.html">
                             <p class="services__item">
                                 Фитнес-трежеры
                             </p>
                         </a>
                     </li>
-                    <li class="services__item _treadmills">
+                    <li class="services__item services__item_treadmills">
                         <a href="/pages/treadmills.html">
                             <p>Беговые дорожки</p>
                         </a>
@@ -150,39 +175,51 @@
         <section class="advantages">
             <div class="advantages__content container-box">
                 <h2 class="advantages__title">преимущества компании</h2>
-                <h3 class="advantages__subtitle">Качественное сервисное обслуживание проданного оборудования от&nbsp;производителя</h3>
+                <h3 class="advantages__subtitle">Качественное сервисное обслуживание <br> проданного оборудования от&nbsp;производителя</h3>
                 <ul class="advantages__list">
                     <li class="advantages__item">
-                        <img src="/assets/images/main-page/wrench.svg" alt="ключ">
-                        <h4 class="advantages__item-subtitle">Диагностика и ремонт</h4>
+                        <div class="advantages__item-subtitle">
+                            <img src="/assets/images/main-page/wrench.svg" alt="ключ">
+                            <h4>Диагностика и ремонт</h4>
+                        </div>
                         <p class="advantages__text">Диагностика и ремонт массажного оборудования, включая выявление<br>
                             и исправление всех видов неисправностей</p>
                     </li>
                     <li class="advantages__item">
-                        <img src="/assets/images/main-page/Pencil_Alt.svg" alt="карандаш">
-                        <h4 class="advantages__item-subtitle">Консультация</h4>
+                        <div class="advantages__item-subtitle">
+                            <img src="/assets/images/main-page/Pencil_Alt.svg" alt="карандаш">
+                            <h4>Консультация</h4>
+                        </div>
                         <p class="advantages__text">Консультация по эксплуатации оборудования, включая рекомендации по правильному использованию, уходу и обслуживанию</p>
                     </li>
                     <li class="advantages__item">
-                        <img src="/assets/images/main-page/Exchange.svg" alt="замена">
-                        <h4 class="advantages__item-subtitle">Замена</h4>
+                        <div class="advantages__item-subtitle">
+                           <img src="/assets/images/main-page/Exchange.svg" alt="замена">
+                            <h4>Замена</h4>
+                        </div>
                         <p class="advantages__text">Замена деталей<br>
                             и комплектующих</p>
                     </li>
                     <li class="advantages__item">
-                        <img src="/assets/images/main-page/settings.svg" alt="шестеренка">
-                        <h4 class="advantages__item-subtitle">Официальный сервис</h4>
-                        <p class="advantages__text">Собственный гарантийный и&nbsp;постгарантийный сервис в&nbsp; <br> каждом городе.</p>
+                        <div class="advantages__item-subtitle">
+                            <img src="/assets/images/main-page/settings.svg" alt="шестеренка">
+                            <h4>Официальный сервис</h4>
+                        </div>
+                        <p class="advantages__text">Собственный гарантийный и&nbsp;постгарантийный сервис в&nbsp; каждом  <br>городе.</p>
                     </li>
                     <li class="advantages__item">
-                        <img src="/assets/images/main-page/delivery.svg" alt="доставка">
-                        <h4 class="advantages__item-subtitle">Доставка</h4>
-                        <p class="advantages__text">Собственная доставка <br> с&nbsp;оперативным таймингом и&nbsp;компетентными курьерами.</p>
+                        <div class="advantages__item-subtitle">
+                            <img src="/assets/images/main-page/delivery.svg" alt="доставка">
+                            <h4>Доставка</h4>
+                        </div>
+                        <p class="advantages__text">Собственная доставка <br>  с&nbsp;оперативным   таймингом  <br>и&nbsp;компетентными курьерами.</p>
                     </li>
                     <li class="advantages__item">
-                        <img src="/assets/images/main-page/product.svg" alt="продукт">
-                        <h4 class="advantages__item-subtitle">Гарантия на продукцию</h4>
-                        <p class="advantages__text">Продукция бренда удобная, функциональная, компактная и&nbsp;надежная.</p>
+                        <div class="advantages__item-subtitle">
+                            <img src="/assets/images/main-page/product.svg" alt="продукт">
+                            <h4>Гарантия на продукцию</h4>
+                        </div>
+                        <p class="advantages__text">Продукция бренда удобная, функциональная, компактная и&nbsp; <br>надежная.</p>
                     </li>
                 </ul>
             </div>
@@ -239,35 +276,35 @@
                             </ul>
                         </li>
                     </ol>
-                    <p class="order__text">Благодарим за&nbsp;выбор нашего сервисного центра Yamaguchi. Если у&nbsp;вас возникнут <br> дополнительные вопросы, пожалуйста, свяжитесь с&nbsp;нами. Мы&nbsp;всегда готовы помочь вам.</p>
+                    <p class="order__text">Благодарим за&nbsp;выбор нашего сервисного центра Yamaguchi. Если у&nbsp;вас возникнут <br> дополнительные вопросы, пожалуйста, свяжитесь с&nbsp;нами. <span>Мы&nbsp;всегда готовы помочь вам.</span> </p>
                     <picture class="order__image">
                         <img src="/assets/images/main-page/treadmills1.png" alt="беговые дорожки Yamaguchi">
                     </picture>
                 </div>
             </div>
         </section>
-        <section class="details">
-            <div class="details__content container-box">
+        <section class="details" id="details">
+            <div class="details__content container-box details__container-box">
                 <h2 class="details__title">Подробно о&nbsp;наших услугах</h2>
                 <div class="details__wrapper">
                     <picture class="details__img">
                         <img  src="/assets/images/main-page/img_drill.png" alt="дрель">
                     </picture>
-                    <div class="details__block">
-                        <p class="details__text">
-                            Наш сервисный центр не только предоставляет ремонтные услуги, но и обеспечивает долгий срок службы вашего массажного оборудования. <br> Мы  понимаем, что каждое устройство имеет свои особенности, поэтому мы оснащены знаниями и опытом для ремонта различных видов  и <br>типов массажного оборудования. Независимо от того, является ли<br> вашим  оборудованием массажное кресло, массажер, беговая дорожка или фитнес-тренажер, мы обеспечим его полноценное восстановление.
-                        <p class="details__text">   
-                            Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную диагностику вашего массажного оборудования Yamaguchi, выявим все неисправности и незамедлительно устраним их. При необходимости мы заменим детали и комплектующие только оригинальными запчастями Yamaguchi, чтобы гарантировать надежность и долговечность ремонта.
-                        </p>
-                       
-                    </div>
+                   
+                    <p class="details__text_short">
+                        Наш сервисный центр не только предоставляет ремонтные услуги, но и обеспечивает долгий срок службы вашего массажного оборудования. <br> Мы  понимаем, что каждое устройство имеет свои особенности, поэтому <br> мы оснащены знаниями и опытом для ремонта различных видов  и типов массажного оборудования. Независимо от того, является ли вашим  оборудованием массажное кресло, массажер, беговая дорожка или <br> фитнес-тренажер, мы обеспечим его полноценное восстановление.
+                    <p class="details__text">   
+                        Наши услуги охватывают широкий спектр возможностей. Мы проведем комплексную диагностику вашего массажного оборудования Yamaguchi, выявим все <br> неисправности и незамедлительно устраним их. При необходимости мы заменим <br> детали и комплектующие только оригинальными запчастями Yamaguchi, чтобы гарантировать надежность и долговечность ремонта.
+                    </p>
+                    
+                    <div class="details__detailed">
+                        <div class="details__detailed__img">
+                            <img src="/assets/images/main-page/img_detailed_armchair.png" alt="кресло">
+                        </div>
+                        <div class="details__detailed__text">Также обменяем Ваше старое массажное кресло <br> на новое со скидкой в Trade-in</div>
+                        
+                    </div> 
                 </div>
-                <div class="details__detailed">
-                    <div class="details__detailed__text">Также обменяем Ваше старое массажное <br> кресло на новое со скидкой в Trade-in</div>
-                    <div class="details__detailed__href">
-                        <a href="traid-in.html">Подробнее</a>
-                    </div>
-                </div> 
             </div>
         </section>
         <section class="faq">
@@ -352,8 +389,8 @@
             </div>
         </section>
         <section class="contacts">
-            <div class="contacts__content container-box">
-                <div class="contacts__wrapper">
+            <div class="contacts__wrapper container-box">
+                <!-- <div class="contacts__wrapper">
                     <div class="contacts__brands-wrapper">
                         <h4 class="contacts__subtitle">Гарантийное обслуживание брендов</h4>
                         <ul class="contacts__brands-list">
@@ -383,28 +420,86 @@
                         <h4 class="contacts__subtitle _trade-in">Трейд-Ин</h4>
                         <p class="contacts__text"> Для оценки Вашего оборудования и условий обмена обращайтесь по телефону <b>8 800 333 12 81</b>. <a href="traid-in.html" class="contacts__link contacts__text" target="_blank">Подробности на странице Trade-In</a></p>
                     </div>
-                </div>
-                <div class="contacts__inputs">
-                    <div class="contacts__phone-wrapper">
-                        <a href="tel:8-800-550-59-34">8 800 550 59 34</a>
+                    </div>
+                    <div class="contacts__inputs">
+                        <div class="contacts__phone-wrapper">
+                            <a href="tel:8-800-550-59-34">8 800 550 59 34</a>
+                            <p>Телефон для справок</p>
+                        </div>
+                        <form class="contacts__form">
+                            <input class="contacts__input" type="text" placeholder="Имя">
+                            <input class="contacts__input" type="tel" name="" id="" placeholder="Телефон для связи">
+                            <input class="contacts__input" type="email" name="" id="" placeholder="Ваш e-mail">
+                            <textarea class="contacts__input contacts__textarea" name="" id=""
+                            placeholder="Модель оборудования, &#10симптомы поломки"></textarea>
+                            <button class="contacts__button" type="submit">Отправить заявку</button>
+                        </form>
+                    </div>
+                </div> -->
+
+                
+                    <div class="contacts__brands contacts__white-bgc">
+                        <h4 class="contacts__subtitle">Гарантийное обслуживание брендов</h4>
+                        <ul class="contacts__brands-list">
+                            <li class="contacts__brands-item">
+                                <img src="/assets/images/main-page/yamaguchi-logo.png" alt="логотип Yamaguchi">
+                            </li>
+                            <li class="contacts__brands-item">
+                                <img src="/assets/images/main-page/us-medica-logo.png" alt="логотип Us Medica">
+                            </li>
+                            <li class="contacts__brands-item">
+                                <img src="/assets/images/main-page/anatomico-logo.png" alt="логотип Anatomico">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contacts__hours contacts__white-bgc">
+                        <h4 class="contacts__subtitle contacts__subtitle_centers"> Сервисные центры</h4>
+                        <p class="contacts__text">
+                            Мы&nbsp;подберем Вам ближайший салон Yamaguchi, где можно сдать 
+                            технику на&nbsp;диагностику.
+                        </p>
+                        <h4 class="contacts__subtitle  contacts__subtitle_hours"> Время работы</h4>
+                        <p class="contacts__text">Получить консультацию можно по&nbsp;телефону сервисного центра
+                            <a class="contacts__phone-ancor" href="tel:8-800-550-59-34">8&nbsp;800&nbsp;550&nbsp;59&nbsp;34</a> <span class="contacts__hours-string"> (пн-пт:&nbsp;с&nbsp;9.00&nbsp;до&nbsp;18.00,&nbsp;сб:&nbsp;9.00-17.00)</span>
+                        </p>
+                    </div>
+
+                    <div class="contacts__trade-in contacts__white-bgc">
+                        <h4 class="contacts__subtitle contacts__subtitle_trade-in">Трейд-Ин</h4>
+                        <p class="contacts__text"> Для оценки Вашего оборудования и условий обмена обращайтесь по телефону <a class="contacts__phone-ancor" href="tel:8-800-550-59-34">8&nbsp;800&nbsp;550&nbsp;59&nbsp;34</a>. <a href="traid-in.html" class="contacts__link" target="_blank">Подробности&nbsp;на&nbsp;странице <span class="contacts__word-wrap">Trade-in</span> </a></p>
+                    </div>
+
+                    <div class="contacts__phone contacts__gray-bgc">
+                        <a class="contacts__phone-ancor-big" href="tel:8-800-550-59-34">8&nbsp;800&nbsp;550&nbsp;59&nbsp;34</a>
+                        <!-- <div class="contacts__phone-wrapper">
+                            <img src="/assets/images/main-page/phone.svg" alt="телефон">
+                            <p>Телефон для справок</p>
+                        </div> -->
                         <p>Телефон для справок</p>
                     </div>
+
                     <form class="contacts__form">
                         <input class="contacts__input" type="text" placeholder="Имя">
                         <input class="contacts__input" type="tel" name="" id="" placeholder="Телефон для связи">
                         <input class="contacts__input" type="email" name="" id="" placeholder="Ваш e-mail">
-                        <textarea class="contacts__input contacts__textarea" name="" id="" placeholder="Модель оборудования, симптомы поломки"></textarea>
+                        <textarea class="contacts__input contacts__textarea" name="" id=""
+                        placeholder="Модель оборудования, &#10симптомы поломки"></textarea>
                         <button class="contacts__button" type="submit">Отправить заявку</button>
                     </form>
+             
                 </div>
-            </div>
         </section>
     </main>
     <footer class="footer">
+        <picture class="footer__bg">
+            <source srcset="/assets/images/main-page/footer_bg-mobile.png" media="(max-width: 767px)">
+            <img src="/assets/images/main-page/footer_bg-desc.png" alt="footer">
+        </picture>
         <div class="footer__content container-box">
             <div class="footer__logo">
                 <a href="./main-page.html">
-                    <img src="/assets/images/main-page/service-logo.png" alt="логотип Yamaguchi Sevice">
+                <img src="/assets/images/main-page/service-logo.png" alt="логотип Yamaguchi Sevice">
                 </a>
             </div>
             <div class="footer__phone">

@@ -15,6 +15,7 @@
 
 body {
     background: $YBlack;
+    // font-family: $font-gilroy;
 }
 
 ::-webkit-scrollbar {
@@ -31,44 +32,203 @@ body {
 }
 
 .header {  
-    position: relative;
+    position: fixed;
     z-index: 2;
-  
+    height: 85px;
+    width: 100%;
+
+    @include nsm {
+        height: 65px;
+    }
+
+   
+    &__wrapper {
+        position: relative;
+        max-width: 1920px;
+        height: 85px;
+        margin: 0 auto;
+        transition: all .8S;
+
+        
+        
+        a:hover {
+            color: $YBlack;
+        }
+
+        @include nsm {
+            height: 65px;
+        }
+
+        
+    
+    }
+
+    &__img {
+        display: none;
+        
+    }
+    
+    
+    &__black-bgc {
+        background-color: $YBlack;
+        overflow: hidden;
+
+        
+
+        a:hover {
+            z-index: 0;
+            position: relative;
+            color: $YRealWhite;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: calc(100% + 65px);
+                height: 85px;
+                background-color: rgba(255, 255, 255, .1);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            }
+        }
+
+        @include nsm {
+            .header__img {
+                display: block;
+                position: absolute;
+                right: 0;
+            }
+        }   
+    }
+
+    &__menu {
+        display: block;
+        height: 85px;
+        margin: 0 auto;
+
+        @include nsm {
+            display: none;
+        }
+
+        
+    }  
+
     &__menu-list {
         display: flex;
         justify-content: space-between;
-        padding: 42px 0 15px;        
+        padding: 42px 0 15px;  
+        
+        @include nsm {
+           flex-direction: column;
+        }
+
     }
 
-    &__menu-item-block {
+    &__menu-item {
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: visible;
-        width: 145px;
-        height: 20px;
 
         a {
             display: block;
             font-family: $font-montserrat;
             font-weight: 400;
             font-size: Clamp(12px, 1vw, 28px);
-            line-height: 111%;
+            line-height: 100%;
             text-transform: uppercase;
             color: $YRealWhite;
             transition: all .2s linear;
-            &:hover {
-                color: $YBlack;
-                font-size: calc(100% + 7px);
-            }               
+            z-index: 0;
+
+            // &:hover {
+            //     &::before {
+            //         content: ;
+            //     }
+            // }
         }
     }
+    &__title {
+        display: none;
+       
+
+        @include nsm {
+            display: block;
+            font-family: $font-porsche;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: $YRealWhite;
+            font-size: Clamp(18px, 3vw, 105px);
+            // padding: 20px; 
+        }
+    }
+
+    &__mobile-menu {
+        display: none;
+       
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-left: 13px;
+        padding-right: 13px;
+
+        @include nsm {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+
+    &__menu-burger {
+        width: 22px;
+        height: 22px;
+
+    }
+
+    &__menu-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    &__line-1 {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: $YRealWhite;
+        margin-bottom: 4px;
+    }
+
+    &__line-2 {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: $YRealWhite;
+        margin-bottom: 4px;
+    }
+
+    &__line-3 {
+        display: block;
+        width: 11px;
+        height: 2px;
+        background-color: $YRealWhite;
+        margin-bottom: 4px;
+        text-align: right;
+    }
+
 }
 
 .service-center {
     padding: 10px 0 88px;
-    margin: -2px 0 0;
+    margin: -10px 0 0;
     position: relative;
+
+    @include nmd {
+       padding-bottom: 0;
+    }
 
     &__current-city {
         background: none;
@@ -81,26 +241,59 @@ body {
 
     &__content {
         position: relative;
-    }
+        padding-top: 85px;
 
-    @include nlg {
-        font-size: 82px; 
+        @include nsm {
+            padding-top: 30px;
+         }
     }
 
     &__title {
         font-family: $font-porsche;
         font-style: normal;
         font-weight: 400;
-        font-size: Clamp(26px, 7.3vw, 105px);
+        font-size: Clamp(18px, 7.5vw, 105px);
         line-height: 100%;
         text-transform: uppercase;
         color: $YRealWhite;
         margin: 0 0 20px;
+
+
+        @include nmd {
+            margin-bottom: 5px;
+            font-size: Clamp(18px, 5vw, 105px);
+
+            @include nsm {
+                display: none;
+            }
+        }
+    }
+
+    &__title-wrapper {
+        position: relative;
+        display: inline-block;      
+        // margin-bottom: 50px;  
+
+        a {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 800;
+            font-size: Clamp(40px, 4vw, 50px);
+            line-height: 86px;
+            vertical-align: middle;
+            float: right;
+            position: absolute;
+            right: 0;
+            bottom: 10%;
+
+            @include nmd {
+            display: none;
+           }
+        }
     }
 
     &__bg {
         height: 1799px;
-        top: -85px;
         left: 0;
         position: absolute;
         display: block;
@@ -114,34 +307,40 @@ body {
     }
 
     &__select {
-        min-width: 222px;
+        min-width: 160px;
         width: fit-content;
         cursor: pointer;
         font-family: $font-porsche;
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: Clamp(8px, 2vw, 14px);
         line-height: 160%;
         color: $YRealWhite;     
         padding: 7px 15px 7px 3px;
         border-radius: 5px;
         display: flex;
         align-items: center;
+        justify-content: center;
         width: max-content;
         transition: .2S;
 
         &:hover {
             background-color: $YSovsemBlack;
+
+            @include nsm {
+                background-color: rgba(0, 0, 0, 0);
+
+            }
         }
      
         &::before {
             content: url("/assets/images/main-page/location.svg");
-            margin-right: 13px;
+            // margin-right: 13px;
         }
 
         &::after {
             content: url("/assets/images/main-page/arrow-down.svg");
-            margin-left: 13px;
+            // margin-left: 13px;
             transform: rotate(0deg);
         }  
     }
@@ -164,6 +363,7 @@ body {
         animation: wrapper .2s ease;
         visibility: visible;
         position: inherit;
+        z-index: 10;
     }
 
     &__list-item {
@@ -192,7 +392,11 @@ body {
     }
 
     &__city-choice {
-        margin-bottom: 103px;
+        margin-bottom: 102px;
+
+        @include nmd {
+            margin-bottom: 50px;
+        }
     }
 
    
@@ -209,14 +413,13 @@ body {
 
     &__arrows {
         position: absolute;
-        top: 130px;
+        top: 306px;
         right:0;
         z-index: 0;
-        @include nmd {
-           top: 87px; 
-        }
-        @include nlg {
-           top: 90px; 
+        width: 226px;
+
+        img {
+            width: 100%;
         }
     }
 
@@ -227,35 +430,95 @@ body {
         }
     }
 
+   &__subtitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center ;
+    position: relative;
+    margin-bottom: 19px;
+    // max-height: 126px;
+        &__img {
+            // height: 20px;
+            width: 100%;
+        }
+    
+        a {
+            display: none;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 800;
+            // font-size: Clamp(40px, 4.8vw, 50px);
+            font-size: 40px;
+            line-height: 68px;
+            color: #FFFFFF;
+            margin-bottom: 31px;
+
+            @include nmd {
+                display: block;
+                align-self: center;
+                justify-self: center;
+            }
+        }
+
+    img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: Clamp(142px, 5vw, 226px);
+       
+
+        @include nmd {
+                display: block;
+                top: -32px;
+                float: right;
+            }
+        }
+
+
+    }
    
 
     &__text {
-        font-family: $font-montserrat;
-        font-weight: 500;
-        font-size: 25px;
-        line-height: 160%;
-        display: flex;
-        align-items: center;
+        font-family: $font-porsche;
+        font-size: Clamp(15px, 4.8vw, 25px);
+        line-height: 65%;
+        text-align: center;
         color: $YRealWhite;
-        margin-bottom: 19px;
-    }
+        font-weight: 400;
+        text-transform: uppercase;
+        position: relative;
 
+        @include nmd {
+            line-height: 100%;
+    }
+     }
+
+  
     &__list {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 31px;
+        // display: flex;
+        // justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: Clamp(42px, 3vw, 66px);
+        margin: 0 auto;
+        gap: 21px;
+        margin-bottom: 15px;
+
+        @include nsm {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+        }
 
         li {
             box-sizing: border-box;
-            width: 27%;
-            padding: 9px 33px;
             background: linear-gradient(92.89deg, rgba(255, 255, 255, 0.3) 5.83%, rgba(255, 255, 255, 0.1) 98.85%);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
             border-radius: 15px;
-            font-family: $font-montserrat;
-            font-weight: 700;
-            font-size: Clamp(13px, 1.3vw,20px);
+            font-family:'Gilroy';
+            font-weight: 300;
+            font-size: Clamp(18px, 1.5vw, 27px);
             line-height: 130%;
             display: flex;
             align-items: center;
@@ -264,23 +527,86 @@ body {
             text-shadow: 0px 7px 20px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             transition: .2S;
+            
             &:hover {
                 scale: 1.03;
             }
+
             @include nmd {
                 padding: 9px;
+                border-radius: 13px;
             }
         }
     }
 
+  
+
     &__form {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        div {
-            width: 49.6%;
-            display: flex;
-            flex-direction: column;
+        display: grid;
+        grid-template-areas: 
+        "name text"
+        "phone text"
+        "mail btn";
+        grid-template-rows: Clamp(34px, 5vw, 70px) Clamp(34px, 5vw, 70px) Clamp(34px, 5vw, 70px) auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 13px;
+
+        @include  nsm {
+            max-width: 400px;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "name"
+            "phone"
+            "mail"
+            "text"
+            "btn";
+        }
+
+    }
+
+    &__name {
+        grid-area: name;
+    }
+
+    &__phone {
+        grid-area: phone;
+    }
+
+    &__mail {
+        grid-area: mail;
+    }
+
+    &__textarea {
+        grid-area: text;
+        resize: none;
+        padding-top: 18px;
+
+        @include  nsm {
+            height: 76px;
+            
+        }
+        
+    }
+    
+    &__button {
+        grid-area: btn;
+        cursor: pointer;
+        background: $YBlack;
+        border-radius: 15px;
+        font-family: 'Gilroy';
+        font-weight: 800;
+        font-size: Clamp(18px, 2.5vw, 26px);
+        color: $YRealWhite;
+        transition: .2S linear; 
+        height: Clamp(34px, 5vw, 70px);
+
+        &:hover {
+            background-color: $YRed;
+        }
+
+        @include nmd {
+            border-radius: 8px;
         }
     }
 
@@ -288,49 +614,21 @@ body {
         background: $YRealWhite;
         border: 1px solid #00418C;
         border-radius: 15px;
+        padding-left: 28px;
         font-family: 'Gilroy';
-        font-weight: 400;
-        font-size: 30px;
-        line-height: 114%;
-        display: flex;
-        align-items: center;
-        color: $YBlack;
-        padding: 17px 28px;
-        
+        font-weight: 300;
+        font-size: Clamp(17px, 2vw, 23px);
+        color: rgb(9%, 9%, 9%, 1);
+
         &::placeholder {
-            font-weight: 300;
-            font-size: 21px;
+            color: rgb(9%, 9%, 9%, .7);
+            font-size: Clamp(15px, 2vw, 21px);
         }
 
-        
-     }
 
-    &__input:not(:last-of-type) {
-        margin-bottom: 16px;
-    }
 
-    &__textarea {
-    padding: 18px 63px 68px 26px;
-    margin-bottom: 16px;
-    resize: none;
-    }
-
-    &__button {
-        cursor: pointer;
-        background: $YBlack;
-        padding: 24px 42px 17px;
-        border-radius: 15px;
-        font-family: $font-montserrat;
-        font-weight: 600;
-        font-size: Clamp(18px, 7.1vw, 26px);
-        line-height: 29px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: $YRealWhite;
-        transition: .2S linear; 
-        &:hover {
-            background-color: $YRed;
+        @include nmd {
+            border-radius: 8px;
         }
     }
 
@@ -348,11 +646,13 @@ body {
         z-index: 3;
        visibility: hidden;
     }
+
     ._wrapper_active {
         opacity: 1;
         animation: wrapper .2s ease;
         visibility: visible;
     }
+
     @keyframes wrapper {
         0% {
             opacity: 1;
@@ -383,8 +683,9 @@ body {
         width: 100%;
         margin-bottom: 30px;
         padding: 30px;
+
         &__input-wrapper {
-        position: relative;
+            position: relative;
         }   
     }
 
@@ -406,7 +707,7 @@ body {
         max-height: 220px;
         padding: 0 30px;
         overflow-y: auto;  
-        
+    }
 
     &__city-link {
         color: $color-white;
@@ -424,25 +725,31 @@ body {
         font-family: "Montserrat";
         font-size: 18px;
     }  
-    }
+    
 }
 
 .services {
     padding: 75px 0 82px;
     position: relative;
 
+    @include nmd {
+       padding-bottom: 0;
+    }
+
     &__title {
         font-family: $font-porsche;
         font-style: normal;
         font-weight: 400;
         // font-size:49px;
-        font-size: Clamp(23px, 7.3vw, 49px);
+        font-size: Clamp(20px, 3.7vw, 49px);
         line-height: 100%;
         color: $YRealWhite;
         margin-bottom: 43px;
+
         @include nmd {
-            font-size: 37px;
+            margin-bottom: 22px;
         }
+        
     }
 
     &__list {
@@ -455,13 +762,13 @@ body {
         box-sizing: border-box;
         padding: 12px 23px 23px;
         
-        & a {
+        a {
             display: block;
             position: relative;
             width: 100%;
             height: 100%;
 
-            & p {
+            p {
                 font-family: 'Gilroy';
                 font-style: normal;
                 font-weight: 800;
@@ -473,55 +780,60 @@ body {
             }
         }
 
-        &._armchairs {
+        &_armchairs {
             border-radius: 29px;
             width: 100%;
-            height: Clamp(224px, 23vw, 380px);
+            height: Clamp(118px, 25vw, 380px);
             background: url("/assets/images/main-page/armchairs.png") no-repeat;
             background-size: cover;
             margin-bottom: 19px;
 
-            & p {
+            p {
                 position: absolute;
                 bottom: 0;
                 
             }
 
-            @include nmd {
-                background-size: contain;
+            @include nsm {
+                // background-size: contain;
+                margin-bottom: 9px;
             }
         }
 
-        &._simulators {
+        &_simulators {
             background:url("/assets/images/main-page/simulators.png") no-repeat;
             background-size: cover;
             width: 48.2%;
-            height: Clamp(177px, 18vw, 289px);
+            height: Clamp(118px, 25vw, 289px);
             border-radius: 22.6px;
 
-            & p {
+            p {
                 padding-left: 0;
                 
             }
 
-            @include nmd {
-                background-size: contain;
+            @include nsm {
+                background-size: cover;
+                width: 100%;
+                margin-bottom: 9px;
             }
         }
 
-        &._treadmills {
+        &_treadmills {
             background:url("/assets/images/main-page/treadmills.png") no-repeat;
             background-size: cover;
             width: 50.2%;
-            height: Clamp(177px, 18vw, 289px);
+            height: Clamp(118px, 25vw, 289px);
             border-radius: 22.6px;
             & p {
                 position: absolute;
                 bottom: 0;
             }
 
-            @include nmd {
-                background-size: contain;
+            @include nsm {
+                background-size: cover;
+                width: 100%;
+                margin-bottom: 9px;
             }
         }
     }
@@ -535,64 +847,124 @@ body {
     background: linear-gradient(180deg, $YBlack 0%, $YSeniorGray 100%);
     padding: 54px 0 117px;
 
+    @include nmd {
+        padding-bottom: 50px;
+    }
+
     &__title {
         text-align: center;
         font-family: $font-porsche;
         font-weight: 400;
         // font-size: 43px;
-        font-size: Clamp(17px, 7.3vw, 43px);
+        font-size: Clamp(18px, 4vw, 43px);
         line-height: 100%;
         color: $YRealWhite;
         margin-bottom: 13px;
+
         @include nlg {
-            font-size: 37px;
-            
+            text-align: left;
         }
+      
     }
 
     &__subtitle {
         text-align: center;
-        font-family: $font-montserrat;
+        font-family: 'Gilroy';
         font-weight: 300;
-        font-size: 20px;
+        font-size: Clamp(13px, 4vw, 20px);
         line-height: 150%;
         color: $YRealWhite;
         margin-bottom: 81px;
+        
+        br {
+            display: none;
+        }
+
+        @include nmd {
+            margin-bottom: 35px;
+        }
+
+        @include nlg {
+            text-align: left;
+
+            br {
+                display: block;
+            }
+    
+        }
     }
 
     &__list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 60px 40px;
+
+        @include nsm {
+            grid-template-columns: 1fr 1fr;
+           row-gap: 38px;
+        } 
         
+        @include nxs {
+            grid-template-columns: 1fr;
+        } 
         
     }
 
     &__item {
-        & img {
-            height: 70px;
-            width: 70px;
-            margin-bottom: 26px;
+        &:last-child {
+            img {
+                padding-left: 8px;
+            }
         }
-        
-        
     }
 
     &__item-subtitle {
-        font-family: $font-montserrat;
-        font-weight: 600;
+        font-family: 'Gilroy';
+        font-weight: 800;
         font-size: Clamp(18px, 1.7vw, 22px);
         line-height: 122%;
         color: $YRealWhite;
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        @include nsm {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        img {
+           
+            width: Clamp(45px, 3vw, 70px);
+
+            @include nsm {
+                    margin-left: -8px;
+            }
+        }
+
+        h4 {
+            @include nsm {
+                margin-left: 20px;
+             }   
+           
+        }
+       
     }
 
     &__text {
-        font-family: $font-montserrat;
-        font-weight: 400;
+        font-family: 'Gilroy';
+        font-weight: 300;
         font-size: Clamp(13px, 1vw, 18px);
         line-height: 178%;
         color: $YRealWhite;
+
+        @include nsm {
+            br {
+                display: none;
+            }
+        }
     }
 }
 
@@ -602,11 +974,15 @@ body {
 
     &__content {
         position: relative;
+        font-family: 'Gilroy';
+        font-weight: 300;
+        font-size: Clamp(15px, 3vw, 20px);
+        line-height: 32px;
+        color: $YRealWhite;
     }
 
     &__image {
         max-width: 41%;
-        // height: 100%;
         position:absolute;
         right: 0;
         top: 0;
@@ -626,130 +1002,187 @@ body {
     &__title {
         font-family: $font-porsche;
         font-weight: 400;
-        font-size: 32px;
+        font-size: Clamp(14px, 4vw, 32px);
         line-height: 120%;
         color: $YRealWhite;
         margin-bottom: 78px;
+
+        @include nsm {
+            margin-bottom: 13px;
+        }
     }
 
     &__list {
         box-sizing: border-box;
         max-width: 54.2%;
         position: relative;
-        font-family: $font-montserrat;
-        font-weight: 400;
-        font-size: 20px;
-        // font-size: Clamp(26px, 7.3vw,20px);
-        line-height: 32px;
-        color: $YRealWhite;
-        margin-bottom: 89px;
         list-style-type: none;
         padding-left: 0;
+        margin-bottom: 87px;
+         
         @include nmd {
-            // width: 100%;
             max-width: unset;
-        }
-
-        & li {
-            font-family: $font-montserrat;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 160%;
-            color: $YRealWhite;
-            ul {
-                padding-left: 20px;
-            }
-            @include nlg {
-                font-size: Clamp(15px, 1vw, 19px);
-            }
-            @include nmd {
-                font-size: 18px;
-            }
-            & br {
-                @include nmd {
-                    display: none;
-                }
-            }
+            margin-bottom: 0;
         }
     }
 
     &__item {
+        margin-bottom: 15px;
+
         &__title {
             display: block;
             margin-bottom: 10px;
-            font-weight: 700;
-            
-        }
-        &:not(:last-of-type) {
-            margin-bottom: 32px;
-        }
-    }   
-    
-    
+            font-weight: 800;
 
-    &__item {
+            @include nmd {
+                margin-bottom: 0;
+            }
+        }
+
         &__list {
-            & li {
+            
+            li {
                 list-style-type: disc;
+                margin-left: 20px;
+                
+                
+                @include nsm {
+                    br {
+                        display: none;
+                    }
+                }
+               
                
             }
         }
-    }
-        
+
+    
+
+    }   
 
     &__text {
-        font-family: $font-montserrat;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 160%;
-        color: $YRealWhite;
+        font-weight: 800;
         text-align: center;
+
         @include nmd {
+            margin-top: 37px;
             margin-bottom: 20px;
+            text-align: left;
+
+            br {
+                display: none;
+            }
+
+            span {
+                margin-top: 30px;
+                display: block;
+            }
         }
     }
 }
 
 .details {
     position: relative;
-    padding: 75px 0 45px;
+    padding: 39px 0 65px;
     background: $YRealWhite;
     overflow: hidden;
 
-    &__wrapper {
-        display: flex;
-        position: relative;
-        // flex-direction: column;
-        
-       
-        
+    &__container-box {
+        @include nxs {
+            padding: 0px;
+
+
+        }
     }
+   
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 29% 71%;
+        row-gap: 81px;
+        position: relative;
+        grid-template-areas: 
+        "img short"
+        "img text"
+        "details details";
+
+        @include nmd {
+            grid-template-areas: 
+            "img short"
+            "details details"
+            "text text";
+        }
+
+        @include nsm {
+            grid-template-columns: 30% 70%;
+            row-gap: 27px;
+        }
+
+        @include nxs {
+            padding: 0;
+            grid-template-areas: 
+            "img"
+            "short"
+            "details"
+            "text";
+            grid-template-columns: 1fr;
+        }
+    }
+
 
     &__img {
         position: static;
-        // left: 0;
-        // bottom: -4px;
-        // width: 700px;
-        // height: 700px;
-        // display: block;
-        // margin-left: -320px;
         height: 0;
-        width: 30%;
+        margin-right: 0;
+        grid-area: img;
+   
         img {
             float: right;
-        }
-        @include nlg {
-            margin-top: 0px;
-            
-        }
-        @include nlgm {
-            // margin-left: -245px;
-        }
-        img {
-           
+            max-width: Clamp(330px, 65vw, 742px);
             object-fit: contain; 
-            
-            
+        }
+
+        @include nlg {
+            img {
+
+                transform: rotate(17deg);
+            }
+        }
+
+        
+
+        @include nmd {
+          
+
+            img {
+                transform: rotate(17deg);
+            }
+
+        }        
+        
+        @include nsm {
+            // margin-bottom: 0;
+           
+            img {
+                // position: absolute;
+                transform: rotate(17deg);
+               margin-right: 60px;
+            }
+
+
+        }
+        @include nxs {
+            right: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            left: -20px;
+
+            img {
+                transform: rotate(45deg);
+                margin-left: -160px;
+            }
         }
     }
 
@@ -758,82 +1191,126 @@ body {
         font-family: $font-porsche;
         font-weight: 400;
         font-size: 41px;
-        font-size: Clamp(24px, 7.3vw, 41px);
+        font-size: Clamp(29px, 5vw, 41px);
         line-height: 100%;
         color: $YSovsemBlack;
-        margin-bottom: 90px;
+        margin-bottom: 76px;
+       
         @include nlg {
-            font-size: 37px;
+           
             text-align: center;
+        }
+    }
+    
+    &__text_short {
+        font-family: 'Gilroy';
+        font-weight: 300;
+        font-size: Clamp(16px, 3vw, 20px);
+        line-height: 170%;
+        color: $YBlack;
+        padding-left: 110px;
+        grid-area: short;
+
+        @include nsm {
+            padding: 0;
+        }
+
+        @include nsm {
+            padding-right: 16px;
         }
     }
 
     &__text {
-        text-align: left;
-        font-family: $font-montserrat;
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 150%;
+        font-family: 'Gilroy';
+        font-weight: 300;
+        font-size: Clamp(16px, 3vw, 20px);
+        line-height: 170%;
         color: $YBlack;
-        // padding-left: 362px;
-        @include nlg {
-            font-size: 16px;
-        }
-        br {
-            @include nlgm {
+        grid-area: text;
+
+       
+        @include nlgm {
+            br {
                 display: none;
             }
         }
-    }
+    
 
-    &__text:last-of-type {
-        margin-bottom: 58px;
+        @include nsm {
+            padding: 0 16px;
+        }
     }
-
-    &__text:not(:last-of-type) {
-        margin-bottom: 50px;
-    } 
 
     &__detailed {
-        margin-top: 40px;
-        right: 0;
-        bottom: 37px;
-        padding: 0 19px;
-        max-width: 1040px;
+        padding: 0 45px;
+        width: 100%;
+        max-width: 1045px;
         min-height: 112px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: linear-gradient(92.89deg, rgba(255, 255, 255, 0.3) 5.83%, rgba(255, 255, 255, 0.1) 98.85%), url("/assets/images/main-page/detailes__text_img.png") no-repeat;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
-        background-size: cover;
+        background:  linear-gradient(90.91deg, #F29D12 13.96%, #F93131 62.93%);
         border-radius: 15px;
         margin-left: auto;
+        grid-area: details;
+
+      
+
         @include nlg {
             position: relative;
             z-index: 1;
             
         }
-        &__text {
-            font-family: $font-montserrat;
-            font-style: normal;
-            font-weight: 900;
-            font-size: 28px;
-            line-height: 37px;
-            color:$YBlack;
-            margin-right: 128px;
-            @include nlg {
-                margin-right: 0;
-                font-size: 20px;
+
+        @include nsm{
+            flex-direction: column;
+            margin-top: 55px;
+            padding: 15px;
+            // border-radius: 0px;
+        }
+
+        @include nxs {
+            border-radius: 0px;
+        }
+
+        &__img {
+            height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+                     
+            img {
+                width: 162px;
+
                 
             }
-            br {
-                @include nlg {
-                    display: none;
-                }
+
+            @include nsm {
+                margin-bottom: 85px;
             }
         }
+
+ 
+        &__text {
+            font-family:  'Gilroy';
+            font-weight: 800;
+            font-size: Clamp(20px, 2.5vw, 32px);
+            line-height: 45px;
+            color: $YRealWhite;
+            width: 80%;
+
+            @include nmd {
+                br {
+                    display: none;
+                } 
+            }
+
+            @include nxs {
+                width: 100%;
+            }
+        }
+        
             
         &__href {
             width: 208px;
@@ -864,42 +1341,58 @@ body {
 .faq {
     background: #1E242A;
     padding: 68px 0 170px;
+    font-family: 'Gilroy';
+
+    @include nsm {
+        padding-bottom: 60px;
+    }
 
     &__title {
         font-family: $font-porsche;
         font-weight: 400;
-        font-size: Clamp(34px, 7.3vw, 68px);
+        font-size: Clamp(34px, 7.3vw, 82px);
         line-height: 110.69%;
         text-transform: uppercase;
         color: $YRealWhite;
         margin-bottom: 58px;
     }
+ 
 
     &__list {
-        font-family: $font-montserrat;
-        font-weight: 700;
-        font-size: 26px;
-        line-height: 110.69%;
-        font-variant: small-caps;
-        color: $YRealWhite;
+        font-family: 'Gilroy'; 
+
+        li {
+           font-family: 'Gilroy'; 
+            font-weight: 800;
+            font-size: 26px;
+            line-height: 110.69%;
+            color: $YRealWhite;
+        }
     }
 
     &__question {
+        font-family: 'Gilroy';
+
+      p {
         position: relative;
-        
+        font-family: 'Gilroy';
+        font-weight: 800;
+        font-style: normal;
+        font-size: 26px;
+        line-height: 110.69%;
+        color: $YRealWhite;
+      }
     }
 
     &__item {
         position: relative;
         cursor: pointer;
-        font-family: $font-montserrat;
-        font-weight: 700;
+        font-family: 'Gilroy';
+        font-weight: 800;
         font-size: 26px;
         line-height: 110.69%;
-        font-variant: small-caps;
         color: $YRealWhite;
         transition: all .2s linear;
-
     }
 
 
@@ -922,8 +1415,9 @@ body {
     }
 
     &__text {
-        font-family: $font-montserrat;
-        font-weight: 500;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 300;
         font-size: 18px;
         line-height: 150%;
         color: $YRealWhite;
@@ -933,15 +1427,16 @@ body {
         transition: all .2s linear;
         max-height: 0;
     }
+
+    
 }
 
 
 .contacts {
     background: #1E242A;
-    padding: 85px 0 114px;
+
     &__content{
-        display: flex;
-        justify-content: space-between;
+      
         @include nmd {
             flex-direction: column;
         }
@@ -949,74 +1444,120 @@ body {
     }
 
     &__wrapper {
-        max-width: 718px;
-        @include nlg {
-            margin-right: 10px;
-            align-self: center;
+        display: grid;
+        grid-template-columns: 1.9fr 1.3fr;
+        gap: 20px;
+        grid-template-areas: 
+        "brands phone"
+        "hours form"
+        "trade-in form";
+
+        @include nmd {
+            grid-template-columns: 1fr;
+           
+            grid-template-areas: 
+            "brands"
+            "phone"
+            "hours"
+            "trade-in"
+            "form";
         }
+
+        @include nxs {
+            gap: 7px;
+        }
+    }
+
+    &__white-bgc {
+        background-color: $YRealWhite;
+        border-radius: 15px;
+    }
+
+    &__gray-bgc {
+        background-color: #383838;
+        border-radius: 15px;
+
+        @include nmd {
+            background: none;
+        }
+
+    }
+
+    &__brands {
+        padding: 32px 50px 27px 50px;
+        grid-area: brands;
+
+        @include nsm {
+            padding: 7px 21px 15px 23px;
+        }
+  
     }
 
     &__subtitle {
-        font-family: $font-montserrat;
-        font-weight: 500;
+        font-family: 'Gilroy';
+        font-weight: 300;
         font-size: Clamp(20px, 2.2vw, 30px);
         line-height: 160%;
-        display: flex;
-        align-items: center;
         color: $YSovsemBlack;
-        margin: 17px 0 19px;
+        margin-bottom: 19px;
 
-        &._centers::before {
-            content: url("/assets/images/main-page/location-black.svg");
-            margin-right: 15px;
+        &_centers {
+            &::before {
+                content: url("/assets/images/main-page/location-black.svg");
+                margin-right: 15px;
+            }
         }
         
-        &._hours::before {
-            content: url("/assets/images/main-page/time.svg");
-            margin-right: 15px;
+        &_hours {
+            margin-top: 20px;
+
+            &::before {
+                content: url("/assets/images/main-page/time.svg");
+                margin-right: 15px;
+            }
         }
         
-        &._trade-in::before {
-            content: url("/assets/images/main-page/trade-in.svg");
-            margin-right: 15px;
-        }
-
-        @include nlg {
-            font-size: 23px;
-        }
-        
-    }
-
-    &__brands-wrapper {
-        padding: 17px 50px;
-        background: $YRealWhite;
-        border-radius: 15px;
-        margin-bottom: 20px;
-    }
-
-    &__working-hours-wrapper {
-        padding: 4px 29px 34px;
-        background: $YRealWhite;
-        border-radius: 15px;
-        margin-bottom: 20px;
-    }
-    &__link {
-        text-decoration: underline;
+        &_trade-in {
+            &::before {
+                content: url("/assets/images/main-page/trade-in.svg");
+                margin-right: 15px;
+            }
+        }       
     }
 
     &__brands-list {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+
+
+        & > li {
+            width: 30%;
+            text-align: center;
+            
+            &:first-child {
+                text-align: left;
+            }
+
+            &:last-child {
+                text-align: right;
+            }
+
+        }
+
         & > li {
             @include nlg {
                 width: 25%;
             }
            
         }
+
+        
     }
 
     &__brands-item {
+
         img {
             @include nlg {
                 object-fit: contain;
@@ -1025,40 +1566,202 @@ body {
         }
     }
 
-    &__text {
-        font-family: $font-montserrat;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 160%;
-        color: $YBlack;
+    &__hours {
+        padding: 17px 62px 32px 29px ;
+        grid-area: hours;
 
-        &._bold {
-            font-weight: 700;
+        @include nsm {
+            padding: 10px 22px 15px 13px;
+        }       
+    }
+
+    &__hours-string {
+        @include nsm {
+            display: block;
+        }  
+    }
+
+    &__trade-in {
+        padding: 17px 29px 33px 29px;
+        grid-area: trade-in;
+
+        @include nsm {
+            padding: 16px 21px 14px 14px;
         }
-        @include nlg {
-            font-size: 16px;
-        }
-        br {
-            @include nlg {
-                display: none;
+    }
+
+    &__word-wrap {
+        white-space: nowrap;
+    }
+
+    &__phone {
+        padding: 33px 0 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-area: phone;
+
+        @include nmd {
+            flex-direction: row;
+            padding: 0;
+            &::before {
+                content: url("/assets/images/main-page/phone.svg");
+                margin-right: 20px;
             }
         }
-            
+
+        p {
+            font-family: 'Gilroy';
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 26px;
+            margin-left: 20px;
+
+            &::before {
+                content: url("/assets/images/main-page/phone.svg");
+                margin-right: 20px;
+            }
+
+            @include nmd {
+                display: none;
+                }
+            }
+        
+            @include nsm {
+                padding: 0;
+
+            }
         
     }
 
-    &__trade-in-wrapper {
-        padding: 17px 54px 34px 29px;
-        background: $YRealWhite;
-        border-radius: 15px;
+    &__phone-wrapper {
+        display: flex;
+
+        @include nmd {
+            padding: 0;
+        }
     }
+
+    &__phone-ancor {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 29px;
+        color: #181818;
+
+        &:hover {
+            color: $YRed;
+        }
+
+        @include nmd {
+            font-weight: 300;
+        }
+    }
+
+    &__phone-ancor-big {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 800;
+        font-size: Clamp(15px, 4vw, 50px);
+        line-height: 85px;
+        color: $YRealWhite;
+
+        &:hover {
+            color: $YRed;
+             
+
+            
+        }
+   
+
+        @include nmd {
+           line-height: 170%;
+            
+            &:hover {
+                color: $YRealWhite;
+            }
+        }
+
+        
+        
+        // @include nmd {
+        //     &::before {
+        //         // content: url("/assets/images/main-page/phone.svg");
+        //         // margin-right: 5px;
+        //         // height: 23px;
+        //         // vertical-align: middle;
+        //     }
+        // }
+    }
+
+   
+    &__link {
+        text-decoration: underline;
+        color: $YBlack;
+        
+        &:hover {
+            color: $YRed;
+        }
+
+        @include nmd {
+          
+            color: #00418C; 
+            display: block;
+        
+        }
+    }
+
+    
+
+    &__text {
+        font-family: 'Gilroy';
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 160%;
+        color: $YBlack;
+        width: 100%;
+
+        
+
+        br {
+            @include nmd {
+           
+                display: none;
+            
+        }
+        }
+       
+    }
+        // &._bold {
+        //     font-weight: 700;
+        // }
+        // @include nlg {
+        //     font-size: 16px;
+        // // }
+        // br {
+        //     @include nmd {
+        //         display: none;
+        //     }
+        // }
+            
+        
+    
+
+    // &__trade-in-wrapper {
+    //     padding: 17px 54px 34px 29px;
+    //     background: $YRealWhite;
+    //     border-radius: 15px;
+    // }
 
     &__phone-wrapper {
         text-align: center;
         background: $YSeniorGray;
         border-radius: 15px;
-        padding: 29px 29px  24px;
+        padding: 20px 29px  22px;
         margin-bottom: 20px;
+        
         
         
         @include nmd {
@@ -1067,13 +1770,15 @@ body {
 
         a {
             display: block;
-            font-family: $font-montserrat;
-            font-weight: 700;
+            font-family: 'Gilroy';
+            font-weight: 800;
             font-size: Clamp(38px, 3.5vw, 50px);
             line-height:170%;
             text-decoration-line: underline;
             color: $YRealWhite;
             transition: .1S linear;
+            margin-bottom: 10px;
+
             &:hover {
                 scale: 1.01;
             }
@@ -1081,62 +1786,80 @@ body {
                 font-size: 30px;
             }
         }
-        p {
-            display: flex;
-            justify-content: center;
-            font-family: $font-montserrat;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 26px;
-            &::before {
-                content: url("/assets/images/main-page/phone.svg");
-                margin-right: 28px;
-            }
-        }
+
     }
 
     &__form {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        grid-area: form;
+        height: 100%;
+
+        @include nmd {
+            background-color: $YRealWhite;
+            border-radius: 15px;
+            padding: 14px 11px 14px 12px;
+        }
     }
 
     &__input {
         box-sizing: border-box;
         background: $YRealWhite;
         border-radius: 15px;
-        padding: 15px 20px;
+        // padding: 15px 20px;
         margin-bottom: 10px;
-        font-family: $font-montserrat;
-        font-weight: 400;
+        font-family: 'Gilroy';
+        font-weight: 300;
         font-size: 22px;
         line-height: 27px;
         color: #939393;
+        height: 58px;
+        padding-left: 24px;
+        border: none;
+
+        @include nmd {
+            background-color: $YBadWhite;
+        }
     }
 
     &__textarea {
         resize: none;
-        padding: 19px 20px 176px;
-        @include nlg {
-            padding-bottom: 143px;
-        }
+        height: 247px;
+        padding-top: 19px;
+
+        // padding: 19px 20px 176px;
+        // @include nlg {
+        //     padding-bottom: 143px;
+        // }
     }
 
     &__button {
-        padding: 17px 143px;
+        // padding: 17px 143px;
         background: $YRed;
+        height: 58px;
         border-radius: 15px;
-        font-family: $font-montserrat;
+        font-family: 'Gilroy';
         color: $YRealWhite;
-        font-weight: 400;
+        font-weight: 800;
         font-size: 22px;
         line-height:100%;
         cursor: pointer;
         transition: .2S linear;
 
         &:hover {
-            background-color: $YBlack;
+            background-color: $YRealWhite;
+            color: $YBlack;
+        }
+
+        @include nmd {
+            &:hover {
+                background-color: $YRed;
+                color: $YRealWhite;
+            }
         }
     }
+
+
+
 }
-
-

@@ -1,3 +1,5 @@
+
+
 let selector = document.querySelector('.service-center__select');
 let currentCity = selector.textContent;
 let cityList = document.querySelector('.service-center__city-list');
@@ -71,5 +73,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
+
+  //menu
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.85,
+  };
+
+  let ancors =  document.querySelectorAll('.header__a-js');
+  // console.log(a);
+
+ let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        document.querySelector('.header__wrapper').classList.add('header__black-bgc');
+        // document.querySelector('.header__menu-item-block').classList.remove('header__menu-item-black-a');
+        // document.querySelector('.header__menu-item-block').classList.add('header__menu-item-red-a');
+        ancors.forEach(item => {
+          item.classList.add('header__menu-item-red-a');
+        })
+      } else {
+        document.querySelector('.header__wrapper').classList.remove('header__black-bgc');
+        ancors.forEach(item => {
+          item.classList.remove('header__menu-item-red-a');
+        })
+      }
+    });
+  };
+  
+  let observer = new IntersectionObserver(callback, options);
+
+  let target = document.querySelector(".service-center");
+observer.observe(target);
+
+  // window.addEventListener('scroll', () => {
+  //   if (window.scrollY >= 50) {
+  //     document.querySelector('.header__wrapper').classList.add('header__black-bgc');
+  //   } else {
+  //   }
+  // })
 })
 

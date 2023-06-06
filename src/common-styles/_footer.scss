@@ -7,9 +7,36 @@
     overflow: hidden;
     max-width: 1920px;
     margin: 0 auto;
-    background: url("/assets/images/service/footer-bg.png") no-repeat;
-    background-position: center -2px;
+    // background: url("/assets/images/service/footer-bg.png") no-repeat;
+    // background-position: center -2px;
     padding: 70px 0 46px;
+
+    @include nsm {
+        padding: 20px 0;
+    }
+
+    &__bg {
+        position: relative;
+        display: block;
+
+        img {
+            position: absolute;
+            z-index: -1;
+            left: 50%;
+            transform: translateX(-50%);
+            object-fit: cover;
+
+        }
+
+        @include nsm {
+            img {
+                transform: translate(-86%, -21%);
+                
+            }
+        }
+
+   
+    }
 
     &__menu {
         li:not(:last-of-type) {
@@ -41,10 +68,25 @@
         @include nmd {
             gap: 50px;
         } 
+
+        @include nsm {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "phone"
+            "hours"
+            " cards";
+            grid-row-gap: 16px;
+            justify-items: center;
+            text-align: center;
+        }
     }
 
     &__logo {
         grid-area: logo;
+
+        @include nsm {
+            display: none;
+        }
     }
 
     &__phone {
@@ -62,11 +104,17 @@
                 color: $YBlack;
             }
         }
+
+       
      
     }
 
     &__menu {
         grid-area: menu;
+
+        @include nsm {
+            display: none;
+        }
     }
 
     &__hours {
